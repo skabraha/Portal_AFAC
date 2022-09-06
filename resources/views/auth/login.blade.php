@@ -1,23 +1,23 @@
 <x-guest-layout>
     <div class="relative">
         <img src="{{ asset('images/img2.jpg') }}" class="static fixed  inset-0 object-cover w-full h-full" alt="" />
-        <div class="relative bg-gray-600 bg-opacity-50 w-full h-full mx-auto">
+        <div class="relative bg-gray-600 bg-opacity-50 inset-0 z-0">
             <div class="relative">
                 <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-10 lg:py-18">
                     <div class="flex flex-col items-center justify-between xl:flex-row">
                         <div class="w-full max-w-xl mb-12 xl:mb-0 xl:pr-16 xl:w-7/12">
                             <h1 class="text-gray-800 dark:text-gray-300 md:text-4xl">Bienvenido</h1>
                             <h2
-                                class="pt-6 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+                                class="pt-6 xs:pt-2 max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
                                 Portal de Autoservicio de los Trabajadores de la <span class="text-blue-900">AFAC</span>
                             </h2>
                             <a href=""
-                                class="opacity-80 items-center justify-center flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+                                class="opacity-80 items-center justify-center flex items-center mb-6 xs:mb-0 text-2xl font-semibold text-gray-900 dark:text-white">
                                 <img class="lg:w-52 lg:h-40 w-40 h-30 mr-2" src="{{ asset('images/AFAC1.png') }}"
                                     alt="logo">
                             </a>
                         </div>
-                        <div class="w-full max-w-xl xl:px-8 xl:w-5/12">
+                        <div class="w-full max-w-xl xl:px-8 xl:w-5/12 xs:px-2">
                             <div class="bg-white rounded-2xl shadow-2xl p-7 sm:p-10">
                                 <h3 class="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                                     Ingresar
@@ -38,7 +38,7 @@
                             {{-- update field login --}}
                             <div class="flex flex-col pt-4" x-data="{ count: 0 }"
                                 x-init="count = $refs.countme.value.length">
-                                <x-jet-label for="login" class="inline-block mb-1 font-medium"
+                                <x-jet-label for="login" class="inline-block mb-1 font-medium text-base"
                                     value="{{ __('Número de empleado') }}" />
                                 <x-jet-input id="login"
                                     class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
@@ -47,7 +47,7 @@
                             {{-- update field login --}}
                             <div class="flex flex-col pt-4" x-data="{ show: false }">
                                 <div class="mb-6">
-                                    <x-jet-label for="password" value="{{ __('Contraseña') }}" />
+                                    <x-jet-label for="password" class="text-base" value="{{ __('Contraseña') }}" />
                                     <div class="relative">
                                         <input id="password" :type="show ? 'text' : 'password'"
                                             class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
