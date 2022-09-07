@@ -17,7 +17,7 @@ return new class extends Migration
             $table->renameColumn('name', 'firstname');
             $table->string('lastname')->after('name');
             $table->string('username')->unique()->after('lastname');
-            $table->string('email')->nullable()->change();
+            // $table->string('email')->nullable()->change();
         });
     }
 
