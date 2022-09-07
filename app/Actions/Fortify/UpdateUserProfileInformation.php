@@ -21,8 +21,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
         Validator::make($input, [
             'firstname' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
-            'username' => ['required', 'string', 'max:7'],
-            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+            'username' => ['required', 'string', 'max:7', Rule::unique('users')->ignore($user->id)],
+            // 'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
         ])->validateWithBag('updateProfileInformation');
 
@@ -38,7 +38,7 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
                 'firstname' => $input['firstname'],
                 'lastname' => $input['lastname'],
                 'username' => $input['username'],
-                'email' => $input['email'],
+                // 'email' => $input['email'],
             ])->save();
         }
     }
@@ -56,8 +56,8 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'firstname' => $input['firstname'],
             'lastname' => $input['lastname'],
             'username' => $input['username'],
-            'email' => $input['email'],
-            'email_verified_at' => null,
+            // 'email' => $input['email'],
+            // 'email_verified_at' => null,
         ])->save();
 
         $user->sendEmailVerificationNotification();
