@@ -30,36 +30,38 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->updateProfilePhoto($input['photo']);
         }
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
-            $this->updateVerifiedUser($user, $input);
-        } else {
+        //     if ($input['email'] !== $user->email &&
+        //         $user instanceof MustVerifyEmail) {
+        //         $this->updateVerifiedUser($user, $input);
+        //     } 
+        else {
             $user->forceFill([
                 'firstname' => $input['firstname'],
                 'lastname' => $input['lastname'],
-                'username' => $input['username'],
+                // 'username' => $input['username'],
                 // 'email' => $input['email'],
             ])->save();
+            //     }
+            // }
+
+            // /**
+            //  * Update the given verified user's profile information.
+            //  *
+            //  * @param  mixed  $user
+            //  * @param  array  $input
+            //  * @return void
+            //  */
+            // protected function updateVerifiedUser($user, array $input)
+            // {
+            //     $user->forceFill([
+            //         'firstname' => $input['firstname'],
+            //         'lastname' => $input['lastname'],
+            //         'username' => $input['username'],
+            //         'email' => $input['email'],
+            //         'email_verified_at' => null,
+            //     ])->save();
+
+            //     $user->sendEmailVerificationNotification();
         }
-    }
-
-    /**
-     * Update the given verified user's profile information.
-     *
-     * @param  mixed  $user
-     * @param  array  $input
-     * @return void
-     */
-    protected function updateVerifiedUser($user, array $input)
-    {
-        $user->forceFill([
-            'firstname' => $input['firstname'],
-            'lastname' => $input['lastname'],
-            'username' => $input['username'],
-            // 'email' => $input['email'],
-            // 'email_verified_at' => null,
-        ])->save();
-
-        $user->sendEmailVerificationNotification();
     }
 }
