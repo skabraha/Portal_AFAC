@@ -9,7 +9,6 @@ $nav_links = [
         'name' => 'Admin',
         'route' => route('admin.home'),
         'active' => request()->routeIs('admin.home'),
-        'can' => 'admin.home',
     ],
     [
         'name' => 'User',
@@ -39,11 +38,17 @@ $nav_links = [
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
 
-                    @foreach ($nav_links as $nav_link)
-                        <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
-                            {{ $nav_link['name'] }}
+                    @if (Auth()->user()->can('admin.home'))
+                        @foreach ($nav_links as $nav_link)
+                            <x-jet-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                                {{ $nav_link['name'] }}
+                            </x-jet-nav-link>
+                        @endforeach
+                    @else
+                        <x-jet-nav-link href="{{ route('admin.user.home') }}" :active="request()->routeIs('admin.user.home')">
+                            {{ __('User') }}
                         </x-jet-nav-link>
-                    @endforeach
+                    @endif
 
                 </div>
             </div>
@@ -113,7 +118,8 @@ $nav_links = [
                                     <button
                                         class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                         <img class="h-8 w-8 rounded-full object-cover"
-                                            src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}" />
+                                            src="{{ Auth::user()->profile_photo_url }}"
+                                            alt="{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}" />
                                     </button>
                                 @else
                                     <span class="inline-flex rounded-md">
@@ -162,7 +168,8 @@ $nav_links = [
                         </x-jet-dropdown>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        <a href="{{ route('register') }}"
+                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                     @endauth
                 </div>
             </div>
@@ -208,7 +215,8 @@ $nav_links = [
                     @endif
 
                     <div>
-                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->firstname }} {{ Auth::user()->lastname }}</div>
+                        <div class="font-medium text-base text-gray-800">{{ Auth::user()->firstname }}
+                            {{ Auth::user()->lastname }}</div>
                         <div class="font-medium text-sm text-gray-500">{{ Auth::user()->username }}</div>
                     </div>
                 </div>
