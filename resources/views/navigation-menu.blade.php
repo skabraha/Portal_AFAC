@@ -6,7 +6,18 @@ $nav_links = [
         'active' => request()->routeIs('dashboard'),
     ],
     [
-        'name' => 'Prueba2',
+        'name' => 'Admin',
+        'route' => route('admin.home'),
+        'active' => request()->routeIs('admin.home'),
+        'can' => 'admin.home',
+    ],
+    [
+        'name' => 'User',
+        'route' => route('admin.user.home'),
+        'active' => request()->routeIs('admin.user.home'),
+    ],
+    [
+        'name' => 'prueba',
         'route' => '#',
         'active' => false,
     ],
@@ -151,8 +162,7 @@ $nav_links = [
                         </x-jet-dropdown>
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Login</a>
-                        <a href="{{ route('register') }}"
-                            class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                     @endauth
                 </div>
             </div>

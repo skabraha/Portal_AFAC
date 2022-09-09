@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+// Ruta a la vista dashboard desactivada
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
