@@ -15,11 +15,6 @@ $nav_links = [
         'route' => route('admin.user.home'),
         'active' => request()->routeIs('admin.user.home'),
     ],
-    [
-        'name' => 'prueba',
-        'route' => '#',
-        'active' => false,
-    ],
 ];
 @endphp
 
@@ -194,12 +189,17 @@ $nav_links = [
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
 
-            @foreach ($nav_links as $nav_link)
-                <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
-                    {{ $nav_link['name'] }}
-                </x-jet-responsive-nav-link>
-            @endforeach
-
+            @if (Auth()->user()->can('admin.home'))
+                @foreach ($nav_links as $nav_link)
+                    <x-jet-responsive-nav-link href="{{ $nav_link['route'] }}" :active="$nav_link['active']">
+                        {{ $nav_link['name'] }}
+                    </x-jet-responsive-nav-link>
+                @endforeach
+            @else
+                <x-jet-nav-link href="{{ route('admin.user.home') }}" :active="request()->routeIs('admin.user.home')">
+                    {{ __('User') }}
+                </x-jet-nav-link>
+                @endif
         </div>
 
         <!-- Responsive Settings Options -->
