@@ -26,3 +26,13 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/busqueda', function () {
+    return view('receipt');
+})->name('busqueda');
+
+Route::get('/admin_cuentas', function () {
+    return view('entry');
+})->name('cuentas');
+
