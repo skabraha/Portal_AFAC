@@ -36,3 +36,8 @@ Route::get('/admin_cuentas', function () {
     return view('entry');
 })->name('cuentas');
 
+Route::get('/historial', function () {
+    return view('history');
+})->name('historial');
+
+

@@ -19,13 +19,13 @@
                         </div>
                         <div class="flex-grow">
                             <p class="leading-relaxed text-base">Descarga y consulta los recibos de nomina.</p>
-                            <a class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
+                            <p class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
                                 modulo
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                                 </svg>
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -47,19 +47,19 @@
                         </div>
                         <div class="flex-grow">
                             <p class="leading-relaxed text-base">Registra los usuarios que ingresaran a al Portal</p>
-                            <a class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
+                            <p class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
                                 modulo
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                                 </svg>
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </a>
             </div>
             <div class="p-4 md:w-1/3">
-                <a href="">
+                <a href="{{ route('historial') }}">
                     <div
                         class="group flex rounded-lg h-full bg-gray-100 p-8 transition duration-100 transform hover:scale-105 hover:cursor-pointer flex-col">
                         <div class="flex items-center mb-3">
@@ -72,17 +72,17 @@
                                 </svg>
 
                             </div>
-                            <h2 class="text-gray-900 text-lg title-font font-medium">Vitacora de Descarga</h2>
+                            <h2 class="text-gray-900 text-lg title-font font-medium">Historial de cambios</h2>
                         </div>
                         <div class="flex-grow">
-                            <p class="leading-relaxed text-base">Historial de descraga de los comprobantes de Pagos</p>
-                            <a class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
+                            <p class="leading-relaxed text-base">Visualiza los cambios realizados en el portal</p>
+                            <p class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">Ir al
                                 modulo
                                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                     stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                                     <path d="M5 12h14M12 5l7 7-7 7"></path>
                                 </svg>
-                            </a>
+                            </p>
                         </div>
                     </div>
                 </a>

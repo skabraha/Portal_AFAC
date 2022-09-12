@@ -56,7 +56,7 @@
                                                                 class="hidden sm:inline-block sm:align-middle sm:h-screen"
                                                                 aria-hidden="true">&#8203;</span>
                                                             <div
-                                                                class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6">
+                                                                class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-gray-50 rounded-lg shadow-xl dark:bg-gray-900 sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full sm:p-6">
                                                                 <div class="mt-5 text-center">
                                                                     <h3 class="text-xl font-semibold text-gray-800 dark:text-white"
                                                                         id="modal-title">
@@ -138,7 +138,7 @@
                                                                                 fill="currentColor" />
                                                                         </svg>
                                                                         <span class="text-gray-600 dark:text-gray-400">
-                                                                            El archivo de tener las siguientes columnas:
+                                                                            El archivo debe tener las siguientes columnas con la siguinte información:
                                                                         </span>
                                                                     </li>
                                                                     <div class="py-2 flex flex-col">
