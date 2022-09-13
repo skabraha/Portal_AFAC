@@ -35,6 +35,6 @@ class UserSeeder extends Seeder
             'lastname' => 'Soto Sanchez',
             'username' => '7141327',
             'password' => Hash::make(7141327)
-        ])->assignRole('User');
+        ])->assignRole('Admin');
     }
 }
