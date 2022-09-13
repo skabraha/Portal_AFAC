@@ -27,3 +27,12 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/busqueda', function () {
+    return view('/admin/payment');
+})->name('busqueda');
+
+Route::get('/admin_cuentas', function () {
+    return view('/admin/access');
+})->name('cuentas');

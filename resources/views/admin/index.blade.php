@@ -5,13 +5,13 @@
     </h2>
     </x-slot>--}}
     <div class="py-12">
-        <div class="max-w-9xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <section class="text-gray-600 body-font">
-                    <div class="container px-5 py-10 mx-auto">
+                    <div class="container px-8 py-10 mx-auto">
                         <div class="flex flex-wrap -m-4">
                             <div class="p-4 md:w-1/4">
-                                <a href="">
+                                <a href="{{ route('busqueda') }}">
                                     <div
                                         class="group flex rounded-lg h-full bg-gray-100 p-8 transition duration-100 transform hover:scale-105 hover:cursor-pointer flex-col">
                                         <div class="flex items-center mb-3">
@@ -45,7 +45,7 @@
                                 </a>
                             </div>
                             <div class="p-4 md:w-1/4">
-                                <a href="">
+                                <a href="{{ route('cuentas') }}">
                                     <div
                                         class="group flex rounded-lg h-full bg-gray-100 p-8 transition duration-100 transform hover:scale-105 hover:cursor-pointer flex-col">
                                         <div class="flex items-center mb-3">
