@@ -114,7 +114,7 @@
                                 </a>
                             </div>
                             <div class="p-4 md:w-1/4">
-                                <a href="">
+                                <a href="{{ route('bitacora') }}">
                                     <div
                                         class="group flex rounded-lg h-full bg-gray-100 p-8 transition duration-100 transform hover:scale-105 hover:cursor-pointer flex-col">
                                         <div class="flex items-center mb-3">
