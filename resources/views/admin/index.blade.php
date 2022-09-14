@@ -80,7 +80,7 @@
                                 </a>
                             </div>
                             <div class="p-4 md:w-1/4">
-                                <a href="">
+                                <a href="{{ route('admin_import') }}">
                                     <div
                                         class="group flex rounded-lg h-full bg-gray-100 p-8 transition duration-100 transform hover:scale-105 hover:cursor-pointer flex-col">
                                         <div class="flex items-center mb-3">
@@ -89,16 +89,16 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
                                                 </svg>
 
+
                                             </div>
-                                            <h2 class="text-gray-900 text-lg title-font font-medium">Historial de
-                                                descarga</h2>
+                                            <h2 class="text-gray-900 text-lg title-font font-medium">Importación de xml y imagenes
+                                            </h2>
                                         </div>
                                         <div class="flex-grow">
-                                            <p class="leading-relaxed text-base">Visualiza los cambios realizados en el
-                                                portal</p>
+                                            <p class="leading-relaxed text-base">Importa el archivo xlm de la nomina y administra el carrusel</p>
                                             <p
                                                 class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">
                                                 Ir al
@@ -123,16 +123,16 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path stroke-linecap="round" stroke-linejoin="round"
-                                                        d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+                                                        d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                 </svg>
 
-
                                             </div>
-                                            <h2 class="text-gray-900 text-lg title-font font-medium">Importar el xml
-                                            </h2>
+                                            <h2 class="text-gray-900 text-lg title-font font-medium">Historial de
+                                                descarga</h2>
                                         </div>
                                         <div class="flex-grow">
-                                            <p class="leading-relaxed text-base">Importa el archivo xlm de la nomina</p>
+                                            <p class="leading-relaxed text-base">Visualiza los cambios realizados en el
+                                                portal</p>
                                             <p
                                                 class="mt-3 text-gray-100 inline-flex items-center group-hover:text-blue-800">
                                                 Ir al

@@ -36,3 +36,6 @@ Route::get('/busqueda', function () {
 Route::get('/admin_cuentas', function () {
     return view('/admin/access');
 })->name('cuentas');
+Route::get('/admin_import', function () {
+    return view('/admin/import');
+})->name('admin_import');
