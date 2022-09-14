@@ -39,3 +39,6 @@ Route::get('/admin_cuentas', function () {
 Route::get('/admin_import', function () {
     return view('/admin/import');
 })->name('admin_import');
+Route::get('/bitacora', function () {
+    return view('/admin/history');
+})->name('bitacora');
