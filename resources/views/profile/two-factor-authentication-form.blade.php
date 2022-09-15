@@ -120,5 +120,5 @@
 
             @endif
         </div>
-    </x-slot>
+    </x-slot> 
 </x-jet-action-section>

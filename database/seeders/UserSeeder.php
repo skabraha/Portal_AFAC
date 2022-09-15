@@ -19,7 +19,6 @@ class UserSeeder extends Seeder
         // User::truncate();
 
         $csvFile = fopen(public_path("users/usuarios.csv"), "r");
-
         $firstline = true;
         while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
             if (!$firstline) {
@@ -34,5 +33,6 @@ class UserSeeder extends Seeder
         }
 
         fclose($csvFile);
+
     }
 }
