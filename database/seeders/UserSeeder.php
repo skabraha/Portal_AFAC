@@ -16,25 +16,23 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'firstname' => 'Abraham Eduardo',
-            'lastname' => 'Diaz Torres',
-            'username' => '7141757',
-            'password' => Hash::make(7141757)
-        ])->assignRole('Admin');
+        // User::truncate();
 
-        User::create([
-            'firstname' => 'Jorge Alberto',
-            'lastname' => 'Mondragon Escamilla',
-            'username' => '7141684',
-            'password' => Hash::make(7141684)
-        ])->assignRole('User');
+        $csvFile = fopen(public_path("users/usuarios.csv"), "r");
+        $firstline = true;
+        while (($data = fgetcsv($csvFile, 2000, ",")) !== FALSE) {
+            if (!$firstline) {
+                User::create([
+                    "firstname" => $data['1'],
+                    "lastname" => $data['2'],
+                    "username" => $data['3'],
+                    "password" => Hash::make($data['4']),
+                ])->assignRole('User');
+            }
+            $firstline = false;
+        }
 
-        User::create([
-            'firstname' => 'Laura Jessica',
-            'lastname' => 'Soto Sanchez',
-            'username' => '7141327',
-            'password' => Hash::make(7141327)
-        ])->assignRole('Admin');
+        fclose($csvFile);
+
     }
 }
