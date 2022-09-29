@@ -312,9 +312,54 @@ $nav_links = [
         </div>
     </div>
 </div>
-<div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
+{{-- <div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
     style="background-image: url({{ asset('images/img3.jpg') }})">
     <div class="md:w-1/2">
         <p class="text-3xl font-bold">Portal de Autoservicio de los Trabajadores de la AFAC.</p>
+    </div> 
+</div> --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img class="object-cover w-full h-56 xs:h-52" src="{{ asset('images/img3.jpg') }}"
+                alt="apple watch photo" />
+        </div>
+        <div class="swiper-slide">
+            <img class="object-cover w-full h-56 xs:h-52" src="https://as2.ftcdn.net/v2/jpg/01/62/30/97/1000_F_162309704_hjKdABDehScEI7hzCQTOGFT3psIgsCmQ.jpg"
+                alt="apple watch photo" />
+        </div>
+        <div class="swiper-slide">
+            <img class="object-cover w-full h-56 xs:h-52" src="https://img.freepik.com/foto-gratis/avion-al-atardecer_1150-8338.jpg?w=740&t=st=1663194905~exp=1663195505~hmac=78c4297553994adaaf5aac6d75c71b76e7aa0b97256abd8c65eb922041b9bb29"
+                alt="apple watch photo" />
+        </div>
+        <div class="swiper-slide">
+            <img class="object-cover w-full h-56 xs:h-52" src="https://img.freepik.com/foto-gratis/avion-gran-nube_1150-12631.jpg?w=740&t=st=1663194935~exp=1663195535~hmac=1336ae2eb489bdda58ce2faa3886cf411ac70730b8b29e96b5d13d75ceb84bae"
+                alt="apple watch photo" />
+        </div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
 </div>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper('.mySwiper', {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+</script>
