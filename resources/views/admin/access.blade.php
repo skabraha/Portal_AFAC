@@ -1,4 +1,15 @@
 <x-app-layout>
+    <div>
+        @if (session()->has('success'))
+            <div class="alert alert-success">
+                <div class="p-4 mb-4 text-sm text-blue-700 bg-blue-100 rounded-lg dark:bg-blue-200 dark:text-blue-800"
+                    role="alert">
+                    <span class="font-medium"></span> {{ session('success') }}
+                </div>
+            </div>
+    </div>
+    @endif
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -16,7 +27,7 @@
                             </div>
                         </div>
                     </section>
-                    <div class="px-6 flex items-left justify-left mb-10 ">
+                    {{-- <div class="px-6 flex items-left justify-left mb-10 ">
                         <div class="flex items-left p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
                             <button x-on:click="open = !open"
                                 class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-2 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:py-2 rounded-xl md:px-8">Nuevo
@@ -45,82 +56,61 @@
                                 <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-blue-500">
                                     Todos los campos son obligatorios (*) y no pueden dejarse en vacios.
                                 </p>
-                                <form class="mt-4" action="#">
+                                <form >
                                     <label for="name" class="text-base text-gray-700 dark:text-gray-200">
                                         Nombre(s)
                                     </label>
-                                    <label class="block mt-0" for="email">
-                                        <input type="text" name="name" id="name"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
+                                    <input type="text" wire:model="firstname" />
+                                    @error('firstname')
+                                        <span
+                                            class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                                    @enderror
                                     <label for="lastname" class="text-base text-gray-700 dark:text-gray-200 mt-3">
                                         Apellidos
                                     </label>
-                                    <label class="block mt-0" for="lastname">
-                                        <input type="text" name="lastname" id="lastname"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
+                                    <input type="text" wire:model="lastname" />
+                                    @error('lastname')
+                                        <span
+                                            class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                                    @enderror
                                     <label for="user" class="text-base text-gray-700 dark:text-gray-200 mt-3">
                                         Usuario
                                     </label>
-                                    <label class="block mt-0" for="user">
-                                        <input type="text" name="user" id="user"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
-                                    <label for="nemployee" class="text-base text-gray-700 dark:text-gray-200 mt-3">
-                                        Numero de Empleado
-                                    </label>
-                                    <label class="block mt-0" for="user">
-                                        <input type="number" name="nemployee" id="nemployee"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
+                                    <input type="text" wire:model="username">
                                     <label for="password" class="text-base text-gray-700 dark:text-gray-200 mt-3">
                                         Contraseña
                                     </label>
-                                    <label class="block mt-0" for="password">
-                                        <input type="password" name="password" id="password"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
+                                    <input type="password" wire:model="password">
                                     <label for="confirmpass" class="text-base text-gray-700 dark:text-gray-200 mt-3">
                                         Confirma Contraseña
                                     </label>
-                                    <label class="block mt-0" for="confirmpass">
-                                        <input type="password" name="confirmpass" id="confirmpass"
-                                            class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                    </label>
-
+                                    <input type="password" wire:model="passwordConfirmation" />
+                                    @error('password')
+                                        <span
+                                            class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                                    @enderror
                                     <div class="mt-4 sm:flex sm:items-center sm:-mx-2">
                                         <button type="button" @click="open = false"
                                             class="w-full px-4 py-2 text-sm font-medium tracking-wide text-gray-700 capitalize transition-colors duration-300 transform border border-gray-200 rounded-md sm:w-1/2 sm:mx-2 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800 hover:bg-gray-100 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40">
                                             Cancel
                                         </button>
                                         <button type="button"
-                                            class="w-full px-4 py-2 mt-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:mt-0 sm:w-1/2 sm:mx-2 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40">
+                                            class="w-full px-4 py-2 mt-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md sm:mt-0 sm:w-1/2 sm:mx-2 hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" wire:click.prevent="save">
                                             Guardar
                                         </button>
+                                        <button wire:click.prevent="save">GUARDAR</button>
+
                                     </div>
                                 </form>
                             </div>
                         </div>
-                    </div>
-                    <div class="px-10 mb-10 flex flex-col">
+                    </div> --}}
+                    {{-- <div class="px-10 mb-10 flex flex-col">
                         <div class="-m-5 overflow-x-auto">
                             <label class="p-1.5 text-gray-600 text-2xl">Registros</label>
-                            <div class="my-6 float-right relative mt-1">
-                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                                    <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
-                                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </div>
-                                <input type="text" wire:model="search" id="table-search"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                    placeholder="Buscar...">
-                            </div>
-                            <div class="p-1.5 min-w-full inline-block align-middle">
-                                <div
+                            <div class="p-1.5 min-w-full inline-block align-middle"> --}}
+                    @livewire('users')
+                    {{-- <div
                                     class="border rounded-lg shadow overflow-hidden dark:border-gray-700 dark:shadow-gray-900">
                                     <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
                                         <thead class="bg-gray-50 dark:bg-gray-700">
@@ -175,12 +165,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                </div> --}}
                 </div>
             </div>
         </div>
-    </div>
 </x-app-layout>

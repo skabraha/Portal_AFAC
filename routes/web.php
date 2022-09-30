@@ -29,16 +29,16 @@ Route::middleware([
 });
 
 
-Route::get('/busqueda', function () {
+Route::get('/payment', function () {
     return view('/admin/payment');
 })->name('busqueda');
 
-Route::get('/admin_cuentas', function () {
+Route::get('/access', function () {
     return view('/admin/access');
 })->name('cuentas');
 Route::get('/admin_import', function () {
     return view('/admin/import');
 })->name('admin_import');
-Route::get('/bitacora', function () {
+Route::get('/history', function () {
     return view('/admin/history');
 })->name('bitacora');
