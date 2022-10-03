@@ -74,7 +74,7 @@ class Users extends Component
         $this->resetInputFields();
         session()->flash(
             'success',
-            $this->id_user ? 'Actualización' : 'Se añadió'
+            $this->id_user ? 'Actualización' : 'Se añadió de forma correcta'
         );
     }
     public function delete($id)
