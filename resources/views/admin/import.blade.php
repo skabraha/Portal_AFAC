@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div class="py-12" x-data="{ openTab:0}">
+    <div class="py-12" x-data="{ openTab: 0 }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div x-data="{ open: false, isOpen:'' }">
+                <div x-data="{ open: false, isOpen: '' }">
                     <section class="bg-white dark:bg-gray-900">
                         <div class="container px-6 py-10 mx-auto">
                             <h1
@@ -16,7 +16,7 @@
                             </div>
                         </div>
                     </section>
-                    <div class="px-10 mb-10 flex flex-col">
+                    {{-- <div class="px-10 mb-10 flex flex-col">
                         <div class="px-2 mb-10 flex flex-col">
                             <nav class="relative z-0 flex border rounded-xl overflow-hidden dark:border-gray-700"
                                 aria-label="Tabs" role="tablist">
@@ -45,9 +45,9 @@
                                             Importar XML
                                         </button>
                                     </div>
-                                </div>
-                                {{-- importacion masiva --}}
-                                <div x-show="open">
+                                </div> --}}
+                    {{-- importacion masiva --}}
+                    {{-- <div x-show="open">
                                     <p class="text-center lg:text-2xl x:text-lg">Importación Masiva</p>
                                     <div class="py-8 relative flex justify-center">
                                         <div class="relative flex flex-col lg:w-3/5 xs:w-1/5">
@@ -171,9 +171,9 @@
                                             Importar imagenes
                                         </button>
                                     </div>
-                                </div>
-                                {{-- importacion de imagenes --}}
-                                <div x-show="open">
+                                </div> --}}
+                    {{-- importacion de imagenes --}}
+                    {{-- <div x-show="open">
                                     <p class="text-center lg:text-2xl x:text-lg">Importación de imagenes</p>
                                     <div class="py-8 relative flex justify-center">
                                         <div class="relative flex flex-col lg:w-3/5 xs:w-1/5">
@@ -286,7 +286,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
+                    <div class="container">
+                        <form action="{{ route('xml-upload') }}" id="frm-create-course" method="post">
+                            @csrf
+                            <div class="form-group">
+                                <label for="file">Select XML File:</label>
+                                <input type="file" class="form-control" required id="file" name="file">
+                            </div>
+
+                            <button type="submit" class="btn btn-sm btn-outline-primary" style="margin: 5px;"
+                                id="submit-post">Submit</button>
+                            <a href="{{ url()->previous() }}" class="btn btn-sm btn-outline-dark"
+                                style="margin: 5px;">Back</a>
+                        </form>
                     </div>
                 </div>
             </div>

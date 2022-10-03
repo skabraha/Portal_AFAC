@@ -28,17 +28,3 @@ Route::middleware([
     })->name('dashboard');
 });
 
-
-Route::get('/payment', function () {
-    return view('/admin/payment');
-})->name('busqueda');
-
-Route::get('/access', function () {
-    return view('/admin/access');
-})->name('cuentas');
-Route::get('/admin_import', function () {
-    return view('/admin/import');
-})->name('admin_import');
-Route::get('/history', function () {
-    return view('/admin/history');
-})->name('bitacora');
