@@ -1,10 +1,50 @@
 <x-app-layout>
-    <div class="py-12" x-data="{ openTab:0}">
+    <div class="py-12" x-data="{ openTab: 0 }">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div x-data="{ open: false, isOpen:'' }">
+                <div x-data="{ open: false, isOpen: '' }">
                     <section class="bg-white dark:bg-gray-900">
-                        <div class="container px-6 py-10 mx-auto">
+                        <div class="container">
+                            <div class="card mt-3 mb-3">
+                                <div class="card-header text-center">
+                                    <h4>Import 
+                                    </h4>
+                                </div>
+                                <div class="card-body">
+                                    <form action="{{ route('datas.import') }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="file" class="form-control">
+                                        <br>
+                                        <button class="btn btn-primary">Import Data</button>
+                                    </form>
+
+                                    {{-- <table class="table table-bordered mt-3">
+                                        <tr>
+                                            <th colspan="3">
+                                                List Of datas
+                                                <a class="btn btn-danger float-end"
+                                                    href="{{ route('datas.export') }}">Export Data</a>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                        </tr>
+                                        @foreach ($datas as $data)
+                                            <tr>
+                                                <td>{{ $data->id }}</td>
+                                                <td>{{ $data->name }}</td>
+                                                <td>{{ $data->email }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </table> --}}
+
+                                </div>
+                            </div>
+                        </div>
+                        {{-- <div class="container px-6 py-10 mx-auto">
                             <h1
                                 class="text-xl font-semibold text-center text-gray-800 capitalize xl:text-3xl lg:text-3xl dark:text-white">
                                 Importación de Archivos
@@ -47,7 +87,7 @@
                                     </div>
                                 </div>
                                 {{-- importacion masiva --}}
-                                <div x-show="open">
+                        {{-- <div x-show="open">
                                     <p class="text-center lg:text-2xl x:text-lg">Importación Masiva</p>
                                     <div class="py-8 relative flex justify-center">
                                         <div class="relative flex flex-col lg:w-3/5 xs:w-1/5">
@@ -171,9 +211,9 @@
                                             Importar imagenes
                                         </button>
                                     </div>
-                                </div>
-                                {{-- importacion de imagenes --}}
-                                <div x-show="open">
+                                </div> --}}
+                        {{-- importacion de imagenes --}}
+                        {{-- <div x-show="open">
                                     <p class="text-center lg:text-2xl x:text-lg">Importación de imagenes</p>
                                     <div class="py-8 relative flex justify-center">
                                         <div class="relative flex flex-col lg:w-3/5 xs:w-1/5">
@@ -285,9 +325,9 @@
                                         </table>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
