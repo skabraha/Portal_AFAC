@@ -42,7 +42,6 @@
                                             <select
                                                 class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                                                 <option selected>Año</option>
-                                                <option>2021</option>
                                                 <option>2022</option>
                                             </select>
                                         </div>
@@ -52,14 +51,16 @@
                                             <select
                                                 class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                                                 <option selected>Mes</option>
+                                                <option value="Agosto">Agosto</option>
                                             </select>
                                         </div>
                                         <div class="relative flex-grow w-full">
                                             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona la
                                                 quincena</label>
                                             <select
-                                                class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
+                                                value=" 2022-08-01 - 2022-08-15" class="py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                                                 <option selected>Quincena</option>
+                                                <option value="2022-08-01 - 2022-08-15"> 2022-08-01 - 2022-08-15</option>
                                             </select>
                                         </div>
                                     </div>
