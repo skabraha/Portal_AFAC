@@ -17,22 +17,20 @@ body {
             role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <form wire:submit.prevent="saveDelete">
                 <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="py-6">
-                        <div class="p-6 text-center">
-                            <div
-                                class="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-12 sm:w-12">
-                                <!-- Heroicon name: outline/exclamation-triangle -->
-                                <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M12 10.5v3.75m-9.303 3.376C1.83 19.126 2.914 21 4.645 21h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 4.88c-.866-1.501-3.032-1.501-3.898 0L2.697 17.626zM12 17.25h.007v.008H12v-.008z" />
-                                </svg>
-                            </div>
-                            <p class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Deseas eliminar al
-                                usuario
-                                <span class="font-bold text-red-900">{{ $firstname }}</span>?
-                            </p>
+                    <div class="p-6 text-center items-center justify-center">
+                        <div
+                            class="mx-auto flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full bg-red-100">
+                            <!-- Heroicon name: outline/exclamation-triangle -->
+                            <svg class="h-8 w-8 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 10.5v3.75m-9.303 3.376C1.83 19.126 2.914 21 4.645 21h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 4.88c-.866-1.501-3.032-1.501-3.898 0L2.697 17.626zM12 17.25h.007v.008H12v-.008z" />
+                            </svg>
                         </div>
+                        <p class="py-2 mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Deseas eliminar al
+                            usuario
+                            <span class="font-bold text-red-900">{{ $firstname }}</span>?
+                        </p>
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
