@@ -45,8 +45,9 @@ class Users extends Component
     {
         $usuarios = $usuarios = User::where('firstname', 'LIKE', '%' . $this->search . '%')
         ->where('lastname', 'LIKE', '%' . $this->search . '%')->paginate(20);
-        $this->usuarios = collect($usuarios->items());
-        return view('livewire.users', ['user' => $usuarios]);
+        //$this->usuarios = collect($usuarios->items());
+        //return view('livewire.users', ['user' => $usuarios]);
+        return view('livewire.users', compact('usuarios'));
     }
 
     private function resetInputFields()

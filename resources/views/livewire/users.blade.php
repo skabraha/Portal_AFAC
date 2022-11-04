@@ -51,7 +51,7 @@
                     @if ($usuarios->count())
                     <div class="p-1.5 min-w-full inline-block align-middle">
                         <div class="border rounded-lg shadow overflow-hidden dark:border-gray-700 dark:shadow-gray-900">
-                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700 w-full">
                                 <thead>
                                     <tr>
                                         <th scope="col"
@@ -125,6 +125,11 @@
                             </table>
                             @endif
                         </div>
+                        <div class="mt-4">
+                        {{ $usuarios->links() }}
+                        </div>
+
+                        
                     </div>
                 </div>
             </div>
