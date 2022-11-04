@@ -51,11 +51,15 @@ class Users extends Component
 
     private function resetInputFields()
     {
-        $this->reset(['firstname', 'lastname', 'username']);
+        $this->reset(['firstname', 'lastname', 'username','password','passwordConfirmation']);
     }
+    
+
     public function new()
     {
         $this->openModal();
+        $this->resetInputFields();
+        
     }
     public function edit($id)
     {
@@ -64,6 +68,8 @@ class Users extends Component
         $this->firstname = $User->firstname;
         $this->lastname = $User->lastname;
         $this->username = $User->username;
+        $this->password = '';
+        $this->passwordConfirmation = '';
         $this->openModal();
     }
     public function save()

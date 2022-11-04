@@ -16,7 +16,7 @@ body {
         <div
             class="relative inline-block px-4 pt-5 pb-4 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl dark:bg-gray-900 sm:my-8 sm:w-full md:max-w-2xl sm:max-w-xs sm:p-6 sm:align-middle">
             <h3 class="text-xl font-medium leading-6 text-gray-800 capitalize dark:text-white" id="modal-title">
-                Nuevo acceso
+                Acceso
             </h3>
             <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 text-blue-500">
                 Todos los campos son obligatorios (*) y no pueden dejarse vacios.
