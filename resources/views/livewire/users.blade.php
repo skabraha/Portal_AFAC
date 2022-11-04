@@ -33,7 +33,7 @@
             @endif
             <div class="px-10 mb-10 flex flex-col">
                 <div class="-m-5 overflow-x-auto">
-                    <label class="p-1.5 text-gray-600 text-2xl">Registros</label>
+                    <label class="p-1.5 text-gray-600 text-2xl">Registrossss</label>
                     <div class="my-6 float-right relative mt-1">
                         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                             <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor"
