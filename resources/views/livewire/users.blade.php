@@ -28,6 +28,9 @@
                         Registro</button>
                 </div>
             </div>
+            @if ($modaldelete)
+            @include('livewire.delete-user')
+            @endif
             <div class="px-10 mb-10 flex flex-col">
                 <div class="-m-5 overflow-x-auto">
                     <label class="p-1.5 text-gray-600 text-2xl">Registros</label>

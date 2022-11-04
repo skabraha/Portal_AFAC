@@ -17,6 +17,7 @@ class Users extends Component
         'password' => 'required|min:8|same:passwordConfirmation',
     ];
     public $modal = false;
+    public $modaldelete = false;
     public $search = '';
     public $id_user, $users, $firstname, $lastname, $username, $password, $passwordConfirmation;
     public $updateMode = false;
@@ -31,6 +32,14 @@ class Users extends Component
     public function closeModal()
     {
         $this->modal = false;
+    }
+    public function openModaldelt()
+    {
+        $this->modaldelete = true;
+    }
+    public function closeModaldelt()
+    {
+        $this->modaldelete = false;
     }
     public function render()
     {
@@ -77,9 +86,27 @@ class Users extends Component
             $this->id_user ? 'Actualización' : 'Se añadió de forma correcta'
         );
     }
-    public function delete($id)
+    //función para eliminar
+    /*public function delete($id)
     {
         User::find($id)->delete();
         session()->flash('message', 'User Deleted Successfully.');
+    }*/
+    public function delete($id)
+    {
+        $User = User::findOrFail($id);
+        $this->id_user = $id;
+        $this->firstname = $User->firstname;
+        $this->lastname = $User->lastname;
+        $this->openModaldelt();
     }
+
+    public function savedelete()
+    {
+        $Delete = User::find($this->id_user);
+        $Delete ->delete();
+        //session()->flash('message', 'User Deleted Successfully.');
+        $this->closeModaldelt();
+    }
+    
 }
