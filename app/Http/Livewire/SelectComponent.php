@@ -17,7 +17,7 @@ class SelectComponent extends Component
 
         $this->nomina = Data::where('anio', $this->anio)
             ->where('mes', $this->mes)
-            // ->where('quincena', $this->quincena)
+            ->where('quincena', $this->quincena)
             ->get();
         $this->anios = Data::all();
         $this->meses = Data::all();
