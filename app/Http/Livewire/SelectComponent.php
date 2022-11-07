@@ -8,11 +8,17 @@ use Livewire\Component;
 class SelectComponent extends Component
 {
     // public $anio;
+    public $count = 0;
     public $anio, $mes, $quincena;
-    public $anios=[], $meses=[], $quincenas=[];
+    public $anios = [], $meses = [], $quincenas = [];
 
     public function mount()
     {
+
+        $this->nomina = Data::where('anio', $this->anio)
+            ->where('mes', $this->mes)
+            // ->where('quincena', $this->quincena)
+            ->get();
         $this->anios = Data::all();
         $this->meses = Data::all();
         $this->quincenas = Data::all();
@@ -25,13 +31,17 @@ class SelectComponent extends Component
     //     $this->quincena = $this->anios->first()->id ?? null;
     // }
 
-    public function save()
+    public function clean()
     {
-        dd($this->anio);
+        $this->reset(['anio', 'mes']);
     }
-
+    public function search()
+    {
+        $this->mount();
+    }
     public function render()
     {
+
         return view('livewire.select-component');
     }
 }
