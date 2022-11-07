@@ -4,11 +4,12 @@ namespace App\Imports;
 
 use App\Models\Data;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithBatchInserts;
+use Maatwebsite\Excel\Concerns\WithChunkReading;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Illuminate\Support\Facades\Hash;
 
-
-class DatasImport implements ToModel, WithHeadingRow
+class DatasImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChunkReading
 {
     /**
      * @param array $row
@@ -17,6 +18,8 @@ class DatasImport implements ToModel, WithHeadingRow
      */
     public function model(array $row)
     {
+        // if ($row[0] != 'DATA') {
+
         return new Data([
             'name'     => $row['name'],
             'email'    => $row['email'],
@@ -110,5 +113,14 @@ class DatasImport implements ToModel, WithHeadingRow
             // 'NoCertificadoSAT' => $row['NoCertificadoSAT'],
             // 'SelloSAT' => $row['SelloSAT'],
         ]);
+    }
+    // }
+    public function batchSize(): int
+    {
+        return 10000;
+    }
+    public function chunkSize(): int
+    {
+        return 10000;
     }
 }
