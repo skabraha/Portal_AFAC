@@ -28,13 +28,13 @@
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione la quincena</option>
                 @foreach ($quincenas as $quincena)
-                    <option value="{{ $quincena->id }}"> {{ $quincena->quincena }}</option>
+                    <option value="{{$quincena->quincena }}"> {{$quincena->quincena }}</option>
                 @endforeach
             </select>
         </div>
     </div>
     <div class="py-4 flex justify-center">
-        <button  wire:click.prevent="clean"
+        <button wire:click.prevent="clean"
             class="inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Limpiar</button>
         <button wire:click.prevent="search"
             class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Buscar</button>
@@ -65,8 +65,8 @@
                     @foreach ($nomina as $nominaTable)
                         <tr>
                             <td
-                            class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                           </td>
+                                class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
+                            </td>
                             <td
                                 class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                 {{ $nominaTable->name }}</td>
@@ -76,7 +76,7 @@
                                 {{ $nominaTable->anio }}</td>
                             <td class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                 {{ $nominaTable->quincena }}</td>
-                            
+
                         </tr>
                     @endforeach
                     {{-- {{ $usuarios->links() }} --}}
