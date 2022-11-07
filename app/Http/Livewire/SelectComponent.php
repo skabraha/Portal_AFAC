@@ -12,6 +12,11 @@ class SelectComponent extends Component
     public $anio, $mes, $quincena;
     public $anios = [], $meses = [], $quincenas = [];
 
+    protected $rules = [
+        'anio' => 'required',
+        'mes' => 'required',
+        'quincena' => 'required'
+    ];
     public function mount()
     {
 
@@ -24,6 +29,10 @@ class SelectComponent extends Component
         $this->quincenas = Data::all();
         // $this-> quincenas = collect( );
     }
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     // public function updateAnio($value)
     // {
@@ -33,10 +42,11 @@ class SelectComponent extends Component
 
     public function clean()
     {
-        $this->reset(['anio', 'mes']);
+        $this->reset(['anio', 'mes', 'quincena']);
     }
     public function search()
     {
+        $this->validate();
         $this->mount();
     }
     public function render()

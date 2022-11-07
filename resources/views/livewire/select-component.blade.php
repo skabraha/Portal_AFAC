@@ -9,6 +9,10 @@
                 <option value="2021">2021</option>
                 <option value="2022">2022</option>
             </select>
+            @error('anio')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona el mes</label>
@@ -21,6 +25,10 @@
                 <option value="ABRIL">ABRIL</option>
                 <option value="MAYO">MAYO</option>
             </select>
+            @error('mes')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona la quincena</label>
@@ -28,9 +36,13 @@
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione la quincena</option>
                 @foreach ($quincenas as $quincena)
-                    <option value="{{$quincena->quincena }}"> {{$quincena->quincena }}</option>
+                    <option value="{{ $quincena->quincena }}"> {{ $quincena->quincena }}</option>
                 @endforeach
             </select>
+            @error('quincena')
+            <span
+                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+        @enderror
         </div>
     </div>
     <div class="py-4 flex justify-center">
