@@ -30,3 +30,6 @@ Route::controller(DataController::class)->group(function(){
     Route::get('datas-export', 'export')->name('datas.export');
     Route::post('datas-import', 'import')->name('datas.import');
 });
+
+Route::name('imprimir')->get('/imprimir',[DataController::class, 'imprimir']);
+
