@@ -11,29 +11,33 @@ use App\Models\Data;
 class DataController extends Controller
 {
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function index()
     {
         $datas = Data::get();
-  
+
         return view('data', compact('datas'));
     }
-        
+
     /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function export() 
+     * @return \Illuminate\Support\Collection
+     */
+    public function export()
     {
         return Excel::download(new DatasExport, 'AFACNOM_15012022_O_01_1334.csv');
     }
-       
+
     /**
-    * @return \Illuminate\Support\Collection
-    */
-    public function import() 
+     * @return \Illuminate\Support\Collection
+     */
+    public function import()
     {
-        Excel::import(new DatasImport,request()->file('file'));
-        return back();
+        Excel::import(new DatasImport, request()->file('file'));
+        // return back();
+        return redirect()->back()->with(
+            'success',
+            'Datos importados correctamente.'
+        );
     }
 }
