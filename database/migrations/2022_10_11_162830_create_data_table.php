@@ -24,10 +24,10 @@ return new class extends Migration
             // -----------------XML
             $table->text('id');
             $table->text('totalregs');
-            $table->text('Num');
+            // $table->text('Num');
             $table->text('id2');
-            $table->text('Certificado');
-            $table->text('Descuento');
+            // $table->text('Certificado');
+            // $table->text('Descuento');
             $table->text('Fecha');
             $table->text('Folio');
             $table->text('FormaPago');

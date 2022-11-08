@@ -19,10 +19,10 @@ class Data extends Model
         // --------------XML
         'id',
         'totalregs',
-        'Num',
+        // 'Num',
         'id2',
-        'Certificado',
-        'Descuento',
+        // 'Certificado',
+        // 'Descuento',
         'Fecha',
         'Folio',
         'FormaPago',
