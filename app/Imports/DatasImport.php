@@ -32,10 +32,10 @@ class DatasImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChun
             // ---------------------XML
             'id' => $row['id'],
             'totalregs' => $row['totalregs'],
-            // 'Num' => $row['Num'],
+            'Num' => $row['Num'],
             'id2' => $row['id2'],
-            // 'Certificado' => $row['Certificado'],
-            // 'Descuento' => $row['Descuento'],
+            'Certificado' => $row['Certificado'],
+            'Descuento' => $row['Descuento'],
             'Fecha' => $row['Fecha'],
             'Folio' => $row['Folio'],
             'FormaPago' => $row['FormaPago'],
