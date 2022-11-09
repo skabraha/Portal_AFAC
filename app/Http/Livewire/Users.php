@@ -43,7 +43,7 @@ class Users extends Component
     }
     public function render()
     {
-        $usuarios = $usuarios = User::where('firstname', 'LIKE', '%' . $this->search . '%')
+        $usuarios = User::where('firstname', 'LIKE', '%' . $this->search . '%')
         ->where('lastname', 'LIKE', '%' . $this->search . '%')->paginate(20);
         //$this->usuarios = collect($usuarios->items());
         //return view('livewire.users', ['user' => $usuarios]);

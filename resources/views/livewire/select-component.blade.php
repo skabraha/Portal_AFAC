@@ -3,43 +3,42 @@
         class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-4 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
         <div class="relative flex-grow w-full">
             <label for="full-name" class="leading-7 text-lg text-gray-600">Selecciona el año</label>
-            <select wire:model="anio"
+            <select wire:model="Fecha"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el año</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
+                @foreach ($Fechas as $Fecha)
+                    <option value="{{ $Fecha->Fecha }}"> {{ $Fecha->Fecha }}</option>
+                @endforeach
             </select>
-            @error('anio')
+            @error('Fecha')
                 <span
                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
             @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona el mes</label>
-            <select wire:model="mes"
+            <select wire:model="FechaInicialPago"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el mes</option>
-                <option value="ENERO">ENERO</option>
-                <option value="FEBRERO">FEBRERO</option>
-                <option value="MARZO">MARZO</option>
-                <option value="ABRIL">ABRIL</option>
-                <option value="MAYO">MAYO</option>
+                @foreach ($FechaInicialPagos as $FechaInicialPago)
+                    <option value="{{ $FechaInicialPago->FechaInicialPago }}"> {{ $FechaInicialPago->FechaInicialPago }}</option>
+                @endforeach
             </select>
-            @error('mes')
+            @error('FechaInicialPago')
                 <span
                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
             @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona la quincena</label>
-            <select wire:model="quincena"
+            <select wire:model="FechaFinalPago"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione la quincena</option>
-                @foreach ($quincenas as $quincena)
-                    <option value="{{ $quincena->quincena }}"> {{ $quincena->quincena }}</option>
+                @foreach ($FechaFinalPagos as $FechaFinalPago)
+                    <option value="{{ $FechaFinalPago->FechaFinalPago }}"> {{ $FechaFinalPago->FechaFinalPago }}</option>
                 @endforeach
             </select>
-            @error('quincena')
+            @error('FechaFinalPago')
             <span
                 class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
         @enderror
@@ -58,19 +57,22 @@
                     <tr>
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
-                            No.</th>
+                            Periodo de pago</th>
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
-                            NOMBRE</th>
+                            Importe neto</th>
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
-                            EMAIL</th>
+                            folio fiscal</th>
                         <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
+                            fecha de emisión</th>
+                        {{-- <th scope="col"
                             class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
                             AÑO</th>
                         <th scope="col"
                             class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
-                            QUINCENA</th>
+                            QUINCENA</th> --}}
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -78,16 +80,15 @@
                         <tr>
                             <td
                                 class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                            </td>
-                            <td
+                                {{ $nominaTable->FechaInicialPago }} - {{ $nominaTable->FechaFinalPago }}</td>                            <td
                                 class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                {{ $nominaTable->name }}</td>
+                                {{ $nominaTable->Total }}</td>
                             <td class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                {{ $nominaTable->email }}</td>
+                                {{ $nominaTable->Folio }}</td>
                             <td class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                {{ $nominaTable->anio }}</td>
-                            <td class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                {{ $nominaTable->quincena }}</td>
+                                {{ $nominaTable->Fecha }}</td>
+                            {{-- <td class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
+                                {{ $nominaTable->FechaFinalPago }}</td> --}}
 
                         </tr>
                     @endforeach

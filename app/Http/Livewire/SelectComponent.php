@@ -4,30 +4,30 @@ namespace App\Http\Livewire;
 
 use App\Models\Data;
 use Livewire\Component;
+use Carbon\Carbon;
 
 class SelectComponent extends Component
-{
-    // public $anio;
+{   // Periodo de pago, Importe neto, folio fiscal, fecha de emisión
+    // Fecha, FechaInicialPago, FechaFinalPago, Total
     public $count = 0;
-    public $anio, $mes, $quincena;
-    public $anios = [], $meses = [], $quincenas = [];
+    public $Fecha, $FechaInicialPago, $FechaFinalPago;
+    public $Fechas = [], $FechaInicialPagos = [], $FechaFinalPagos = [];
 
     protected $rules = [
-        'anio' => 'required',
-        'mes' => 'required',
-        'quincena' => 'required'
+        'Fecha' => 'required',
+        'FechaInicialPago' => 'required',
+        'FechaFinalPago' => 'required'
     ];
     public function mount()
     {
-
-        $this->nomina = Data::where('anio', $this->anio)
-            ->where('mes', $this->mes)
-            ->where('quincena', $this->quincena)
+        $this->nomina = Data::where('Fecha', $this->Fecha)
+            ->where('FechaInicialPago', $this->FechaInicialPago)
+            ->where('FechaFinalPago', $this->FechaFinalPago)
             ->get();
-        $this->anios = Data::all();
-        $this->meses = Data::all();
-        $this->quincenas = Data::all();
-        // $this-> quincenas = collect( );
+        $this->Fechas = Data::all();
+        $this->FechaInicialPagos = Data::all();
+        $this->FechaFinalPagos = Data::all();
+        // $this-> FechaFinalPagos = collect( );
     }
     public function updated($propertyName)
     {
@@ -36,13 +36,13 @@ class SelectComponent extends Component
 
     // public function updateAnio($value)
     // {
-    //     dd($this->quincenas = Data::where('anio', $value)->get());
-    //     $this->quincena = $this->anios->first()->id ?? null;
+    //     dd($this->FechaFinalPagos = Data::where('Fecha', $value)->get());
+    //     $this->FechaFinalPago = $this->Fechas->first()->id ?? null;
     // }
 
     public function clean()
     {
-        $this->reset(['anio', 'mes', 'quincena']);
+        $this->reset(['Fecha', 'FechaInicialPago', 'FechaFinalPago']);
     }
     public function search()
     {
