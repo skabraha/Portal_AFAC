@@ -24,7 +24,7 @@
             <div class="px-6 flex items-left justify-left mb-10 ">
                 <div class="flex items-left p-1 border border-blue-600 dark:border-blue-400 rounded-xl">
                     <button wire:click.prevent="new" type="button"
-                        class="px-4 py-2 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-2 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:py-2 rounded-xl md:px-8">Nuevo
+                        class="px-4 py-0 text-sm font-medium text-blue-600 capitalize transition-colors duration-300 md:py-2 dark:text-blue-400 dark:hover:text-white focus:outline-none hover:bg-blue-600 hover:text-white rounded-xl md:py-2 rounded-xl md:px-8">Nuevo
                         Registro</button>
                 </div>
             </div>
