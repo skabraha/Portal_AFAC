@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<PaqueteNomina id="AFAC2021" totalregs="1306" xmlns="http://www.sat.gob.mx/Nomina/Paquete">
+<ControlComprobante Num="1" id="0100036">
+<xmlComp><Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:nomina12="http://www.sat.gob.mx/nomina12" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI"
+xmlns:catCFDI="http://www.sat.gob.mx/sitio_internet/cfd/catalogos" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+Certificado="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" Descuento="4508.51" Fecha="2022-05-09T00:00:00" Folio="0100036" FormaPago="99" LugarExpedicion="01010" MetodoPago="PUE" Moneda="MXN" NoCertificado="00001000000505865788" Sello="Awl1DurUWqtdfBV8N8M8tDt7K7hmvyRx8NJ3z9GaDcFwo2wnEbTXKomirEMTRalG4Oo+OGcZaKI+DHLbuiNsXEoUFs9OcK4+yqP19DYclp1mjPiZWetnxKA+88eRionfulFKoo0jof7bWdbIgB4Pz83yqFVhxQY+JmKdry37hPPeNbzHMKtYo1+gzr9rAaA5ruCa2rONa+ZmuQ+g777tbO7tDCB+AffYi8qJ4rdp1mH2mcJQs4326eiZEpcqmkAzcDClGcPH6lyxxbdertajeWGEHG/q3Kv8nLIY4jraps+3yKXnqMqKpjKRqBTTOLvPQz40+bIimgNxGPMiaexwog==" Serie="NOCACCAFBF" SubTotal="10084.00" TipoDeComprobante="N" Total="5575.49" Version="3.3"
+xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd">
+<Emisor Nombre="Agencia Federal de Aviación Civil" RegimenFiscal="603" Rfc="AFA191017KH8" />
+<Receptor Nombre="RICARDO MAURICIO SANCHEZ VIZCAYA" Rfc="SAVR720813PP5" UsoCFDI="P01" />
+<Conceptos>
+<Concepto Cantidad="1" ClaveProdServ="84111505" ClaveUnidad="ACT" Descripcion="Pago de nómina" Descuento="4508.51" Importe="10084.00" ValorUnitario="10084.00" />
+</Conceptos>
+<Complemento>
+<Nomina FechaFinalPago="2022-05-15" FechaInicialPago="2022-05-01" FechaPago="2022-05-15" NumDiasPagados="15" TipoNomina="O" TotalDeducciones="4508.51" TotalPercepciones="10084.00" TotalOtrosPagos="0.00" Version="1.2">
+<Emisor RegistroPatronal="AFA191017KH8" />
+<Receptor Antigüedad="P15D" Banco="072" ClaveEntFed="DIF" CuentaBancaria="00686692531" Curp="SAVR720813HDFNZC05" Departamento="área:E00" FechaInicioRelLaboral="2022-05-01" NumEmpleado="0100036" NumSeguridadSocial="80997201159" PeriodicidadPago="04" Puesto="CFP3100001 Enlace" RiesgoPuesto="1" SalarioDiarioIntegrado="0.00" Sindicalizado="No" TipoContrato="01" TipoRegimen="02" />
+<Percepciones TotalExento="0.00" TotalGravado="10084.00" TotalSueldos="10084.00">
+<Percepcion Clave="006" Concepto="Compensacion Garantizada" ImporteExento="0.00" ImporteGravado="5651.00" TipoPercepcion="001" /> 
+<Percepcion Clave="007" Concepto="Sueldos Compactados" ImporteExento="0.00" ImporteGravado="3760.50" TipoPercepcion="001" /> 
+<Percepcion Clave="038" Concepto="Ayuda Despensa" ImporteExento="0.00" ImporteGravado="542.50" TipoPercepcion="038" /> 
+<Percepcion Clave="0A4" Concepto="Prima Quinquenal" ImporteExento="0.00" ImporteGravado="130.00" TipoPercepcion="038" /> 
+</Percepciones>
+<Deducciones TotalImpuestosRetenidos="1433.36" TotalOtrasDeducciones="3075.15">
+<Deduccion Clave="01I" Concepto="ISR a retener" Importe="1433.36" TipoDeduccion="002" />
+<Deduccion Clave="02A" Concepto="ISSSTE Seguro de Salud Trabajadores en Activo y familiares derechohabientes" Importe="106.99" TipoDeduccion="001" />
+<Deduccion Clave="02B" Concepto="ISSSTE Seguro de Salud Trabajadores Pensionados y familiares derechohabientes" Importe="24.32" TipoDeduccion="001" />
+<Deduccion Clave="04A" Concepto="ISSSTE Seguro de retiro cesantia en edad avanzada y vejez" Importe="238.29" TipoDeduccion="001" />
+<Deduccion Clave="04B" Concepto="ISSSTE Seguro de Invalidez y vida" Importe="24.32" TipoDeduccion="001" />
+<Deduccion Clave="04C" Concepto="ISSSTE Servicios Sociales y culturales" Importe="19.45" TipoDeduccion="001" />
+<Deduccion Clave="04D" Concepto="Ahorro Solidario" Importe="38.91" TipoDeduccion="003" />
+<Deduccion Clave="050" Concepto="Seguro de Vida Colectivo Nuevo Seguro Institucional" Importe="558.10" TipoDeduccion="004" />
+<Deduccion Clave="062" Concepto="Pension Alimenticia" Importe="2057.50" TipoDeduccion="007" />
+<Deduccion Clave="077" Concepto="Seguro de Retiro" Importe="7.27" TipoDeduccion="004" />
+</Deducciones>
+<OtrosPagos>
+<OtroPago Importe="0.00" Concepto="Subsidio al Empleo sp" Clave="039" TipoOtroPago="002">
+<SubsidioAlEmpleo SubsidioCausado="0.00" />
+</OtroPago>
+</OtrosPagos>
+</Nomina>
+</Complemento>
+</Comprobante>
+</xmlComp></ControlComprobante>
+</PaqueteNomina>
