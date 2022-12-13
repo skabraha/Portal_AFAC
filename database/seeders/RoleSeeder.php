@@ -28,7 +28,8 @@ class RoleSeeder extends Seeder
             'firstname' => 'Abraham Eduardo',
             'lastname' => 'Diaz Torres',
             'username' => '7141757',
-            'password' => Hash::make(7141757)
+            'password' => Hash::make(7141757),
+            'stateUser' => false
         ])->assignRole('Admin');
     }
 }

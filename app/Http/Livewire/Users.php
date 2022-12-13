@@ -14,7 +14,7 @@ class Users extends Component
     public $modal = false;
     public $modaldelete = false;
     public $search = '';
-    public $id_user, $users, $firstname, $lastname, $username, $password, $passwordConfirmation;
+    public $id_user, $users, $firstname, $lastname, $username, $password, $passwordConfirmation,$stateUser;
     public $updateMode = false;
 
     protected $rules = [        
@@ -48,7 +48,9 @@ class Users extends Component
     {
         $peoplegestor = personalafac::on('mysql2')->get(); 
         $usuarios = $usuarios = User::where('firstname', 'LIKE', '%' . $this->search . '%')
-        ->where('lastname', 'LIKE', '%' . $this->search . '%')->paginate(20);
+        ->where('lastname', 'LIKE', '%' . $this->search . '%')
+        ->where('stateUser',false)
+        ->paginate(20);
         //$this->usuarios = collect($usuarios->items());
         //return view('livewire.users', ['user' => $usuarios]);
         return view('livewire.users', compact('usuarios','peoplegestor'));
@@ -97,7 +99,7 @@ class Users extends Component
         if($this->id_user==null){
             $validation = $this->validate([
                 'firstname' => 'required',
-                'username' => 'unique:users',      
+                'username' => 'required|unique:users',      
                 'password' => 'required|min:8',
                 'passwordConfirmation' => 'required|same:password',                
             ]);
@@ -114,10 +116,11 @@ class Users extends Component
                 'firstname' => $dataPeoples[0]->gstNombr,
                 'lastname' => $dataPeoples[0]->gstApell,
                 'username' => $this->username,
-                'password' => Hash::make($this->password)
+                'password' => Hash::make($this->password),
+                'stateUser' => $this->stateUser = false
             ],
             $validation
-        );
+        )->assignRole('User');
         $this->clean();
         $this->closeModal();
         $this->resetInputFields();
@@ -144,9 +147,20 @@ class Users extends Component
     public function savedelete()
     {
         $Delete = User::find($this->id_user);
-        $Delete ->delete();
+        $Delete->update(
+            [
+                'id' => $this->id_user,
+                'username'=> $this->id_user,
+                'stateUser' => $this->stateUser = true
+            ]
+        );
         //session()->flash('message', 'User Deleted Successfully.');
         $this->closeModaldelt();
+        $this->clean();
+        session()->flash(
+            'success', 'Se elimino registro de forma correcta'
+        );
+
     }
     public function messages()
     {
