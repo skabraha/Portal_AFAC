@@ -158,7 +158,7 @@ class Users extends Component
         $this->closeModaldelt();
         $this->clean();
         session()->flash(
-            'success', 'Se elimino registro de forma correcta'
+            'delete', 'Se elimino registro de forma correcta'
         );
 
     }
