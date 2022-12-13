@@ -15,16 +15,14 @@ return new class extends Migration
     {
         Schema::create('xml_data', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->string('anio')->default(0);
-            $table->string('mes')->default(0);
-            $table->string('quincena')->default(0);
-            // -----------------XML
+            $table->string("name", 120);
+            $table->string("category", 20);
+            $table->string("price", 10);
+            $table->integer("total_videos");
+            // -----------------------------
             // $table->text('id');
             // $table->text('totalregs');
-            // $table->string('Num');
+            // $table->text('Num');
             // $table->text('id2');
             // $table->text('Certificado');
             // $table->text('Descuento');
@@ -99,13 +97,9 @@ return new class extends Migration
             // $table->text('Clave12');
             // $table->text('TipoOtroPago');
             // $table->text('SubsidioCausado');
-            // $table->text('Version13');
-            // $table->text('UUID');
-            // $table->text('FechaTimbrado');
-            // $table->text('RfcProvCertif');
-            // $table->text('SelloCFD');
-            // $table->text('NoCertificadoSAT');
-            // $table->text('SelloSAT');
+            // $table->text("DiasIncapacidad");
+            // $table->text("TipoIncapacidad");
+            // $table->text("ImporteMonetario");
         });
     }
 
