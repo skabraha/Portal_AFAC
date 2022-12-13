@@ -10,7 +10,7 @@ class ReadXmlController extends Controller
 {
     public function index(Request $req)
     {
-        $xmlDataString = file_get_contents(public_path('AFACNOM_15052022_O_01_1306 - prueba.xml')); // AFACNOM_15052022_O_01_1306 - copia
+        $xmlDataString = file_get_contents(public_path('AFACNOM_15052022_O_01_1306.xml')); // AFACNOM_15052022_O_01_1306 - copia
         // $xmlObject = simplexml_load_string($xmlDataString);
 
         // $factura = simplexml_load_string($xmlObject);
