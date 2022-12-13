@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\XmlData;
+use App\Models\prubas_xml;
 use SimpleXMLElement;
 
 class ReadXmlController extends Controller
