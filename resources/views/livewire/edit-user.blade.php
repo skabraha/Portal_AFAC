@@ -22,9 +22,28 @@ body {
                 Todos los campos son obligatorios (*) y no pueden dejarse vacios.
             </p>
             <form class="mt-4">
-                <label class="text-base text-gray-700 dark:text-gray-200" for="">Nombre(s)</label>
-                <label class="block mt-0">
-                    <input
+
+                <div class="mt-2 grid xl:grid-cols-1 xs:grid-cols-1 xl:gap-6">
+                    <div class="relative z-0 w-full mb-2 group">
+                        <label for="input-name" class="block text-sm font-medium mb-2 dark:text-white">Selecione nombre</label>                        
+                        <select id="small" wire:model.lazy="firstname"
+                        class="block w-full p-2 mb-2 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="">Seleccione...</option>
+                        @foreach ($peoplegestor as $peoplegestors)
+                        <option value="{{ $peoplegestors->gstNmpld }}">
+                        {{ $peoplegestors->gstNombr.' '.$peoplegestors->gstApell }}</option>
+                        @endforeach
+                        </select>
+                        @error('firstname')
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                        @enderror
+                    </div>
+                </div>
+
+                {{-- <label class="text-base text-gray-700 dark:text-gray-200" for="">Nombre(s)</label>
+                <label class="block mt-0"> --}}
+                    {{-- <input
                         class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                         type="text" wire:model="firstname" />
                 </label>
@@ -32,9 +51,9 @@ body {
                 <span
                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
                 <br>
-                @enderror
+                @enderror --}}
 
-                <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Apellidos</label>
+                {{-- <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Apellidos</label>
                 <label class="block mt-0">
                     <input
                         class="block mt-0 uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
@@ -44,12 +63,16 @@ body {
                 <span
                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
                 <br>
-                @enderror
+                @enderror --}}
                 <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Ingrese Numero de empleado</label>
                 <label class="block mt-0">
                     <input
                         class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
-                        type="text" wire:model="username">
+                        type="text" wire:model="username">                        
+                        @error('username')
+                            <span
+                                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                        @enderror
                 </label>
                 <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Ingrese Contraseña</label>
                 <label class="block mt-0">
@@ -57,13 +80,19 @@ body {
                         class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                         type="password" wire:model="password">
                 </label>
+                @error('password')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                <br>
+                @enderror
+
                 <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Confirmar contraseña</label>
                 <label class="block mt-0">
                     <input
                         class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                         type="password" wire:model="passwordConfirmation" />
                 </label>
-                @error('password')
+                @error('passwordConfirmation')
                 <span
                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
                 <br>
