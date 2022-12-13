@@ -9,7 +9,8 @@ class XmlData extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
+    protected $guarded = [];
+    // protected $fillable = [
         // 'id',
         // 'totalregs',
         // 'Num',
@@ -90,6 +91,6 @@ class XmlData extends Model
         // 'DiasIncapacidad',
         // 'TipoIncapacidad',
         // 'ImporteMonetario',
-    ];
+    // ];
     public $timestamps = false;
 }
