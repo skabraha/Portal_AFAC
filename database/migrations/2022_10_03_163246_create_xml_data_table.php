@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('xml_data', function (Blueprint $table) {
             $table->id();
             $table->string("name", 120);
-            $table->integer("cantidad");
             $table->string("category", 20);
             $table->string("price", 10);
             $table->integer("total_videos");

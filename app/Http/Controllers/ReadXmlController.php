@@ -68,7 +68,6 @@ class ReadXmlController extends Controller
             foreach ($phpDataArray['course'] as $index => $data) {
                 $dataArray[] = [
                     'name' => $data['name'],
-                    'cantidad' => $data['cantidad'],
                     'category' => $data['category'],
                     'price' => $data['price'],
                     'total_videos' => $data['videos']
