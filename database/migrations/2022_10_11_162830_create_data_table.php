@@ -15,17 +15,17 @@ return new class extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->string('anio')->default(0);
-            $table->string('mes')->default(0);
-            $table->string('quincena')->default(0);
+            // $table->string('name');
+            // $table->string('email');
+            // $table->string('password');
+            // $table->string('anio')->default(0);
+            // $table->string('mes')->default(0);
+            // $table->string('quincena')->default(0);
             // -----------------XML
-            // $table->text('id');
-            // $table->text('totalregs');
-            // $table->string('Num');
-            // $table->text('id2');
+            $table->text('id1');
+            $table->text('totalregs');
+            // $table->integer('Num');
+            $table->text('id2');
             // $table->text('Certificado');
             // $table->text('Descuento');
             // $table->text('Fecha');

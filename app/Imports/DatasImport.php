@@ -21,17 +21,17 @@ class DatasImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChun
         // if ($row[0] != 'DATA') {
 
         return new Data([
-            'name'     => $row['name'],
-            'email'    => $row['email'],
-            'password' => Hash::make($row['password']),
-            'anio'    => $row['anio'],
-            'mes'    => $row['mes'],
-            'quincena'    => $row['quincena'],
+            // 'name'     => $row['name'],
+            // 'email'    => $row['email'],
+            // 'password' => Hash::make($row['password']),
+            // 'anio'    => $row['anio'],
+            // 'mes'    => $row['mes'],
+            // 'quincena'    => $row['quincena'],
             // ---------------------XML
-            // 'id' => $row['id'],
-            // 'totalregs' => $row['totalregs'],
+            'id1' => $row['id1'],
+            'totalregs' => $row['totalregs'],
             // 'Num' => $row['Num'],
-            // 'id2' => $row['id2'],
+            'id2' => $row['id2'],
             // 'Certificado' => $row['Certificado'],
             // 'Descuento' => $row['Descuento'],
             // 'Fecha' => $row['Fecha'],

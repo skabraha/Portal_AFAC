@@ -9,13 +9,14 @@ class Data extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'anio',    
-        'mes',    
-        'quincena'
+    protected $guarded = ['id'];    
+    // protected $fillable = [
+    //     'name',
+    //     'email',
+    //     'password',
+    //     'anio',    
+    //     'mes',    
+    //     'quincena'
         // --------------XML
         // 'id',
         // 'totalregs',
@@ -101,6 +102,6 @@ class Data extends Model
         // 'SelloCFD',
         // 'NoCertificadoSAT',
         // 'SelloSAT'
-    ];
+    // ];
     public $timestamps = false;
 }

@@ -7,7 +7,7 @@ use App\Exports\DatasExport;
 use App\Imports\DatasImport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Data;
-use PDF;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class DataController extends Controller
 {
@@ -26,7 +26,7 @@ class DataController extends Controller
     */
     public function export() 
     {
-        return Excel::download(new DatasExport, 'AFACNOM_15012022_O_01_1334.csv');
+        return Excel::download(new DatasExport, 'AFACNOM_.csv');
     }
        
     /**
@@ -46,7 +46,7 @@ class DataController extends Controller
 
     public function imprimir()
     {
-        $pdf = \PDF::loadView('nomina_receipt');
+        $pdf = PDF::loadView('nomina_receipt');
         return $pdf->setPaper('A4','landscape')->download('Recibo de nomina.pdf');
     }
 }
