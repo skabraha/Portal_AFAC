@@ -9,7 +9,7 @@
         </div>
     </div>
     @endif
-    <ul class="px-4 md:px-6 list-disc space-x-6">
+    <ul class="sm:px-4 md:px-6 list-disc sm:space-x-4 md:space-x-6">
         <li class="inline-block"><a
                 class="py-4 px-1 inline-flex items-center gap-2 text-sm whitespace-nowrap text-gray-500 hover:text-blue-700"
                 href="{{ route('busqueda') }}">
