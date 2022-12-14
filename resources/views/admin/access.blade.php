@@ -9,21 +9,24 @@
         </div>
     </div>
     @endif
-    <nav class="border-b-2 border-gray-200 m:px-6 lg:px-8 flex space-x-8">
-        <a class="py-4 px-1 inline-flex items-center gap-2 text-sm whitespace-nowrap text-gray-400 hover:text-blue-600"
-            href="{{ route('busqueda') }}">
-            Comprobantes de pago
-        </a>
-        <a class="py-4 px-1 inline-flex items-center gap-2 text-sm font-medium whitespace-nowrap text-gray-400 hover:text-blue-600"
-            href="{{ route('admin_import') }}" aria-current="page">
-            Importación
-        </a>
-        <a class="py-4 px-1 inline-flex items-center gap-2 text-sm whitespace-nowrap text-gray-400 hover:text-blue-600"
-            href="{{ route('bitacora') }}">
-            Historial de descarga
-        </a>
-    </nav>
-    <div class="py-10">
+    <ul class="px-4 md:px-6 list-disc space-x-6">
+        <li class="inline-block"><a
+                class="py-4 px-1 inline-flex items-center gap-2 text-sm whitespace-nowrap text-gray-500 hover:text-blue-700"
+                href="{{ route('busqueda') }}">
+                Comprobantes de pago
+            </a></li>
+        <li class="inline-block"><a
+                class="py-4 px-1 inline-flex items-center gap-2 text-sm font-medium whitespace-nowrap text-gray-500 hover:text-blue-700"
+                href="{{ route('admin_import') }}" aria-current="page">
+                Importación
+            </a></li>
+        <li class="inline-block"><a
+                class="py-4 px-1 inline-flex items-center gap-2 text-sm whitespace-nowrap text-gray-500 hover:text-blue-700"
+                href="{{ route('bitacora') }}">
+                Historial de descarga
+            </a></li>
+    </ul>
+    <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <div x-data="{ open: false }">
