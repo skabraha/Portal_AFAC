@@ -26,6 +26,8 @@ class DataController extends Controller
     */
     public function export() 
     {
+        ini_set('memory_limit','-1');
+        set_time_limit(0);
         return Excel::download(new DatasExport, 'AFACNOM_15012022_O_01_1334.csv');
     }
        
