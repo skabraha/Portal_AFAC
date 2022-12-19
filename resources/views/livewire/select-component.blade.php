@@ -1,5 +1,5 @@
 <div>
-    <div
+    <div x-cloak
         class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-4 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
         <div class="relative flex-grow w-full">
             <label for="full-name" class="leading-7 text-lg text-gray-600">Selecciona el año</label>
