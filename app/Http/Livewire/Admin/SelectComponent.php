@@ -29,11 +29,12 @@ class SelectComponent extends Component
     {
         $this->reset(['anio']);
     }
-    public function updatedanio($idFilter)
+    public function updatedAnio($idFilter)
     {
-        $idFilter = $this->idSelection;
-        $this->resultQuerys = Data::where('id', "{$idFilter}")
-            ->orWhere('id2', Auth::user()->username)->get();
+        // $idFilter = $this->idSelection;
+        // $idFilter='01/05/2022';
+        $this->resultQuerys = Data::where('FechaInicialPago','LIKE', '%'."{$idFilter}".'%')->get();
+
     }
     public function searhComponent()
     {
@@ -42,7 +43,7 @@ class SelectComponent extends Component
     }
     public function render()
     {
-        $queryEmployes = Data::where('id2', Auth::user()->username)
+        $queryEmployes = Data::where('id2',Auth::user()->username)
             ->get();
         $date = Carbon::parse($queryEmployes[0]->FechaInicialPago, 'UTC')->settings([
             'locale' => 'es'

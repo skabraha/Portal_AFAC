@@ -3,7 +3,7 @@
         class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-4 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
         <div class="relative flex-grow w-full">
             <label for="full-name" class="leading-7 text-lg text-gray-600">Selecciona el año</label>
-            <select wire:model.defer="anio"
+            <select wire:model.lazy="anio"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el año</option>
                 @foreach ($queryEmployes->groupBy('FechaInicialPago') as $queryEmploye)
