@@ -70,9 +70,7 @@
                             Recuerda que:
                         </h3>
                         <div class="mt-2 text-sm text-gray-600">
-                            <li data-v-620f585d="">El archivo deben ser en formato XML</li>
-                            <li data-v-620f585d="">El nombre de la imagen no debe ser mayor
-                                a 100 caracteres</li>
+                            <li>El archivo a importar deben ser en formato CSV</li>
                         </div>
                     </div>
                 </div>

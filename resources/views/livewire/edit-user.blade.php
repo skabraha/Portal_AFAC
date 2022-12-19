@@ -66,7 +66,7 @@ body {
                 @enderror --}}
                 <label class="text-base text-gray-700 dark:text-gray-200 mt-3" for="">Ingrese Numero de empleado</label>
                 <label class="block mt-0">
-                    <input
+                    <input disabled
                         class="uppercase block w-full px-4 py-3 text-sm text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300"
                         type="text" wire:model="username">                        
                         @error('username')
