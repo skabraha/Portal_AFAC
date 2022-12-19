@@ -163,10 +163,11 @@ class Users extends Component
         //session()->flash('message', 'User Deleted Successfully.');
         $this->closeModaldelt();
         $this->clean();
-        session()->flash(
-            'delete', 'Se elimino registro de forma correcta'
-        );
-
+        $this->notification([
+            'title'       => 'Se ha eliminado éxitosamente',
+            'icon'        => 'error',
+            'timeout' => 3300
+        ]);
     }
     public function messages()
     {
