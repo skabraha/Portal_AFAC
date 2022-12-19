@@ -3,16 +3,18 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Data;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class SelectComponent extends Component
 {
-    public $anio, $month;
+    public $anio, $month, $idSelection;
     public function rules()
     {
         return [
-            'anio' => 'required'
+            'anio' => 'required',
+            'month' => 'required',
         ];
     }
     public function mount()
@@ -25,19 +27,29 @@ class SelectComponent extends Component
     }
     public function clean()
     {
-        $this->reset([]);
+        $this->reset(['anio']);
     }
     public function updatedanio($idFilter)
     {
-        $nEmployee = Auth::user()->username;
-        $this->resultQuerys = Data::where('FechaInicialPago', $idFilter)
-            ->orWhere('id2', $nEmployee)->get();
+        $idFilter = $this->idSelection;
+        $this->resultQuerys = Data::where('id', "{$idFilter}")
+            ->orWhere('id2', Auth::user()->username)->get();
+    }
+    public function searhComponent()
+    {
+        $this->validate();
+        $this->updatedanio($this->idSelection);
     }
     public function render()
     {
-        $nEmployee = Auth::user()->username;
-        $queryEmployes = Data::where('id2', $nEmployee)
+        $queryEmployes = Data::where('id2', Auth::user()->username)
             ->get();
-        return view('livewire.admin.select-component', compact('queryEmployes'));
+        $date = Carbon::parse($queryEmployes[0]->FechaInicialPago, 'UTC')->settings([
+            'locale' => 'es'
+        ]);
+        // $days = $date->day;
+        // $months = $date->month;
+        // $years = $date->year;
+        return view('livewire.admin.select-component', compact('queryEmployes', 'date'));
     }
 }
