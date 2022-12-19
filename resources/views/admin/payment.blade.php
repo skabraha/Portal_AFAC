@@ -1,8 +1,8 @@
 <x-app-layout>
-    <div x-cloak class="py-12">
+    <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div x-data="{ open: false }">
+                <div x-cloak x-data="{ open: false }">
                     <section class="bg-white dark:bg-gray-900">
                         <div class="container px-6 py-10 mx-auto">
                             <h1
