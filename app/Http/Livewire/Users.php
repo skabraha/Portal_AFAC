@@ -7,9 +7,13 @@ use Livewire\Component;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\WithPagination;
+use WireUi\Traits\Actions;
+
+
 
 class Users extends Component
 {
+    use Actions;
     use WithPagination;
     public $modal = false;
     public $modaldelete = false;
@@ -124,10 +128,12 @@ class Users extends Component
         $this->clean();
         $this->closeModal();
         $this->resetInputFields();
-        session()->flash(
-            'success',
-            $this->id_user ? 'Actualización' : 'Se añadió de forma correcta'
-        );
+        $this->notification([
+            'title'       => 'Registro guardado',
+            'description'       => 'Se a agregado el usuario éxitosamente',
+            'icon'        => 'success',
+            'timeout' => 3300
+        ]);
     }
     //función para eliminar
     /*public function delete($id)

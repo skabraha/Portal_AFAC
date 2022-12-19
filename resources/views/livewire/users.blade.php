@@ -1,4 +1,5 @@
 <div>
+    <x-notifications position="bottom-right" />
     <div x-cloak class="py-2">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             @if (session()->has('success'))
