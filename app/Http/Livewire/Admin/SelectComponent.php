@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Data;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -29,12 +30,12 @@ class SelectComponent extends Component
     {
         $this->reset(['anio']);
     }
-    public function updatedAnio($idFilter)
+    public function updatedanio($idFilter)
     {
         // $idFilter = $this->idSelection;
-        // $idFilter='01/05/2022';
-        $this->resultQuerys = Data::where('FechaInicialPago','LIKE', '%'."{$idFilter}".'%')->get();
-
+        $this->resultQuerys = Data::where('FechaInicialPago', 'LIKE', '%' . "{$idFilter}" . '%')
+            ->where('id2', Auth::user()->username)
+            ->get();
     }
     public function searhComponent()
     {
@@ -43,7 +44,7 @@ class SelectComponent extends Component
     }
     public function render()
     {
-        $queryEmployes = Data::where('id2',Auth::user()->username)
+        $queryEmployes = Data::where('id2', Auth::user()->username)
             ->get();
         $date = Carbon::parse($queryEmployes[0]->FechaInicialPago, 'UTC')->settings([
             'locale' => 'es'
