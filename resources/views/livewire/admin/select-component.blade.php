@@ -9,7 +9,6 @@
                 @foreach ($queryEmployes as $queryEmploye)
                     <option value="{{$queryEmploye->FechaInicialPago}}">{{$queryEmploye->FechaInicialPago}}</option>
                 @endforeach
-
             </select>
             {{-- @error('anio')
             <span
