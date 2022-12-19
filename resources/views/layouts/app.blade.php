@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        @wireUiScripts
         <script src="{{ mix('js/app.js') }}" defer></script>
 
         <!-- Styles -->
