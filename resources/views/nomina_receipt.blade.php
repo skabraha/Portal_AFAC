@@ -9,7 +9,16 @@
     <link rel="shortcut icon" href=""/>
 </head>
 <style>
-
+@page {
+    margin: 0cm 0cm;
+}
+body{
+    margin-top: 0.1cm;
+    margin-left: 1cm;
+    margin-right: 1cm;
+    margin-bottom: 0.1cm;
+    font-family: 'Montserrat-Light';
+}
 table {
        font-family: 'Montserrat';
         border-collapse: collapse;
@@ -22,7 +31,7 @@ table {
     }
     tr {
        border: black 1px solid;
-       width: 100px;
+       height: 2px;
     }
     th {
         border: black 1px solid;
@@ -36,7 +45,7 @@ table {
     td {
        border: black 1px solid;
         text-align: left;
-        padding: 4px;
+        padding: 2px;
         font-size: 20px;
     }
      .imagen2{
@@ -47,213 +56,213 @@ table {
 
 <body>
      <div style="padding-left:2%;padding-top:2%">
-          <table>
+          <table style="font-size=10px" >
           <tr>
                 <th height="" width="200px" ROWSPAN=11 style="font-size:14px;text-align:center;background-color:#FFFFFF">
-                  <img src="{{public_path('images/logoafac.png')}}" width="270" height="113.4" alt="">
+                  <img src="{{public_path('images/logoafac.png')}}" width="189" height="70" alt="">
                 </th>
-	            <th width="400px" style="font-size:14px;text-align:center;">EMISOR</th> <th width="600px" COLSPAN=2  style="font-size:14px;text-align:center;">COMPROBANTE DE NOMINA</th>
+	            <th width="400px" style="font-size:10px;text-align:center;">EMISOR</th> <th width="600px" COLSPAN=2  style="font-size:10px;text-align:center;">COMPROBANTE DE NOMINA</th>
 	       </tr>
 <tr>
-    <td  style="font-size:10px;text-align:left;">RFC</td> 
-    <td style="font-size:10px;text-align:left;">VERSION</td>
-    <td style="font-size:10px;text-align:left;">TIPO DE COMPROBANTE</td>
+    <td  style="font-size:8px;text-align:left;">RFC</td> 
+    <td style="font-size:8px;text-align:left;">VERSION</td>
+    <td style="font-size:8px;text-align:left;">TIPO DE COMPROBANTE</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;">NOMBRE</td> 
-    <td style="font-size:10px;text-align:left;">SERIE</td>
-    <td style="font-size:10px;text-align:left;">EXPORTACION</td>
+    <td  style="font-size:8px;text-align:left;">NOMBRE</td> 
+    <td style="font-size:8px;text-align:left;">SERIE</td>
+    <td style="font-size:8px;text-align:left;">EXPORTACION</td>
     </tr>
      <tr>
-    <td  style="font-size:10px;text-align:left;">REGIMEN FISCAL </td> 
-    <td style="font-size:10px;text-align:left;">FOLIO</td>
-    <td style="font-size:10px;text-align:left;">METODO PAGO</td>
+    <td  style="font-size:8px;text-align:left;">REGIMEN FISCAL </td> 
+    <td style="font-size:8px;text-align:left;">FOLIO</td>
+    <td style="font-size:8px;text-align:left;">METODO PAGO</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
-    <td style="font-size:10px;text-align:left;">FECHA</td>
-    <td style="font-size:10px;text-align:left;">MONEDA</td>
+    <td  style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
+    <td style="font-size:8px;text-align:left;">FECHA</td>
+    <td style="font-size:8px;text-align:left;">MONEDA</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
-    <td style="font-size:10px;text-align:left;">LUGAR DE EXPEDICION </td>
-    <td style="font-size:10px;text-align:left;">SUBTOTAL</td>
+    <td  style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
+    <td style="font-size:8px;text-align:left;">LUGAR DE EXPEDICION </td>
+    <td style="font-size:8px;text-align:left;">SUBTOTAL</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
-    <td style="font-size:10px;text-align:left;">SELLO </td>
-    <td style="font-size:10px;text-align:left;">DESCUENTO</td>
+    <td  style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
+    <td style="font-size:8px;text-align:left;">SELLO </td>
+    <td style="font-size:8px;text-align:left;">DESCUENTO</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
-    <td style="font-size:10px;text-align:left;">No. CERTIFICADO </td>
-    <td style="font-size:10px;text-align:left;">TOTAL</td>
+    <td  style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"> </td> 
+    <td style="font-size:8px;text-align:left;">No. CERTIFICADO </td>
+    <td style="font-size:8px;text-align:left;">TOTAL</td>
     </tr>
     <tr>
-    <td  style="font-size:10px;text-align:left;"> </td> 
-    <td style="font-size:10px;text-align:left;">CERTIFICADO</td>
-    <td style="font-size:10px;text-align:left;">CONFIRMACION</td>
+    <td  style="font-size:8px;text-align:left;"> </td> 
+    <td style="font-size:8px;text-align:left;">CERTIFICADO</td>
+    <td style="font-size:8px;text-align:left;">CONFIRMACION</td>
     </tr>
     <tr>
-    <th  style="font-size:10px;text-align:center;">CFDI RELACIONADOS  </th> 
-    <th COLSPAN=2  style="font-size:10px;text-align:center;">CFDI RELACIONADOS  </th> 
+    <th  style="font-size:8px;text-align:center;">CFDI RELACIONADOS  </th> 
+    <th COLSPAN=2  style="font-size:8px;text-align:center;">CFDI RELACIONADOS  </th> 
     </tr>
     <tr>
-    <td style="font-size:10px;text-align:left;">TIPO RELACION</td>
-    <td COLSPAN=2 style="font-size:10px;text-align:left;">UUID</td>
+    <td style="font-size:8px;text-align:left;">TIPO RELACION</td>
+    <td COLSPAN=2 style="font-size:8px;text-align:left;">UUID</td>
     </tr>
 
         </table>
         
        <table>
             <tr>
-                <th height="1" style="font-size:14px;text-align:center;">RECEPTOR</th>
+                <th height="1" style="font-size:10px;text-align:center;">RECEPTOR</th>
             </tr>
             <tr>
-               <td height="1" style="font-size:10px;text-align:left;">RFC</td>
+               <td height="1" style="font-size:8px;text-align:left;">RFC</td>
             </tr>
               <tr>
-               <td height="1" style="font-size:10px;text-align:left;">NOMBRE</td>
+               <td height="1" style="font-size:8px;text-align:left;">NOMBRE</td>
             </tr>
             <tr>
-               <td height="1" style="font-size:10px;text-align:left;">DOMICILIO FISCAL RECEPTOR</td>
+               <td height="1" style="font-size:8px;text-align:left;">DOMICILIO FISCAL RECEPTOR</td>
             </tr>
             <tr>
-               <td height="1" style="font-size:10px;text-align:left;">REGIMEN FISCAL</td>
+               <td height="1" style="font-size:8px;text-align:left;">REGIMEN FISCAL</td>
             </tr>
             <tr>
-               <td height="1" style="font-size:10px;text-align:left;">USO CFDI</td>
+               <td height="1" style="font-size:8px;text-align:left;">USO CFDI</td>
             </tr>
 
             <tr>
-                <th height="1" style="font-size:12px;text-align:center;">CONCEPTOS</th>
+                <th height="1" style="font-size:10px;text-align:center;">CONCEPTOS</th>
             </tr>
         </table>
         <table>
-           <tr><th ROWSPAN=2  style="font-size:14px;text-align:center;background-color:#FFFFFF">CLAVE DE PRODUCTO O SERVICIO</th>
-	           <td style="font-size:10px;text-align:center;">CANTIDAD</td> <td style="font-size:10px;text-align:center;">CLAVE UNIDAD</td> <td style="font-size:10px;text-align:center;">DESCRIPCION </td> <td style="font-size:10px;text-align:center;">VALOR UNITARIO </td> <td style="font-size:10px;text-align:center;">IMPORTE</td>
+           <tr><th ROWSPAN=2  style="font-size:10px;text-align:center;background-color:#FFFFFF">CLAVE DE PRODUCTO O SERVICIO</th>
+	           <td style="font-size:8px;text-align:center;">CANTIDAD</td> <td style="font-size:8px;text-align:center;">CLAVE UNIDAD</td> <td style="font-size:8px;text-align:center;">DESCRIPCION </td> <td style="font-size:8px;text-align:center;">VALOR UNITARIO </td> <td style="font-size:8px;text-align:center;">IMPORTE</td>
 	       </tr>
 	       <tr>
-	           <td style="font-size:10px;text-align:center;">0</td> <td style="font-size:10px;text-align:center;">DESCUENTO</td><td style="font-size:10px;text-align:center;">0</td> <td style="font-size:10px;text-align:center;">OBJETO IMPUESTO</td> <td style="font-size:10px;text-align:center;">0</td>
+	           <td style="font-size:8px;text-align:center;">0</td> <td style="font-size:8px;text-align:center;">DESCUENTO</td><td style="font-size:8px;text-align:center;">0</td> <td style="font-size:8px;text-align:center;">OBJETO IMPUESTO</td> <td style="font-size:8px;text-align:center;">0</td>
 	       </tr>
         </table>
         <table>
             <tr>
-                <th height="2" colspan="2" style="font-size:14px;text-align:center;">COMPLEMENTO NOMINA</th>
+                <th height="2" colspan="2" style="font-size:10px;text-align:center;">COMPLEMENTO NOMINA</th>
             </tr>
             <tr>
-	           <td style="font-size:10px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">VERSION</td> <td style="font-size:10px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">No. DIAS PAGADOS</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">VERSION</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">No. DIAS PAGADOS</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">TIPO NOMINA</td> <td style="font-size:10px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">TIPO NOMINA</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA PAGO</td> <td style="font-size:10px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA PAGO</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA INICIAL PAGO</td> <td style="font-size:10px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL OTROS PAGOS</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA INICIAL PAGO</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL OTROS PAGOS</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;  border-top: white 1px solid;">FECHA FINAL PAGO</td> <td style="font-size:10px;text-align:left; border-top: white 1px solid;"></td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid;">FECHA FINAL PAGO</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid;"></td>
 	        </tr>
 
         </table>
         <table>
             <tr>
-                <th height="1" width="35%" colspan="1" style="font-size:12px;text-align:center;border: black 1px solid;">EMISOR</th>
-                <th height="1" width="65%" colspan="4" style="font-size:12px;text-align:center;">RECEPTOR</th>
+                <th height="1" width="35%" colspan="1" style="font-size:10px;text-align:center;border: black 1px solid;">EMISOR</th>
+                <th height="1" width="65%" colspan="4" style="font-size:10px;text-align:center;">RECEPTOR</th>
             </tr>
             <tr>
-	           <td style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid">REGISTRO PATRONAL</td> 
-	           <td style="font-size:10px;text-align:left;">CURP</td> 
-	           <td style="font-size:10px;text-align:left;">SINDICALIZADO</td> 
-	           <td style="font-size:10px;text-align:left;">No. EMPLEADO</td> 
-	           <td style="font-size:10px;text-align:left;">SALARIO BASE DE COTIZACION APORT</td> 
+	           <td style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid">REGISTRO PATRONAL</td> 
+	           <td style="font-size:8px;text-align:left;">CURP</td> 
+	           <td style="font-size:8px;text-align:left;">SINDICALIZADO</td> 
+	           <td style="font-size:8px;text-align:left;">No. EMPLEADO</td> 
+	           <td style="font-size:8px;text-align:left;">SALARIO BASE DE COTIZACION APORT</td> 
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-	           <td style="font-size:10px;text-align:left;">No. SEGURIDAD SOCIAL</td> 
-	           <td style="font-size:10px;text-align:left;">TIPO JORNADA</td> 
-	           <td style="font-size:10px;text-align:left;">DEPARTAMENTO</td> 
-	           <td style="font-size:10px;text-align:left;">S.D.I</td> 
+	           <td style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+	           <td style="font-size:8px;text-align:left;">No. SEGURIDAD SOCIAL</td> 
+	           <td style="font-size:8px;text-align:left;">TIPO JORNADA</td> 
+	           <td style="font-size:8px;text-align:left;">DEPARTAMENTO</td> 
+	           <td style="font-size:8px;text-align:left;">S.D.I</td> 
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-	           <td style="font-size:10px;text-align:left;">FECHA INICIO RELACION LABORAL</td> 
-	           <td style="font-size:10px;text-align:left;">TIPO REGIMEN</td> 
-	           <td style="font-size:10px;text-align:left;">PUESTO</td> 
-	           <td style="font-size:10px;text-align:left;">CLAVE DE ENTIDAD FEDERATIVA</td> 
+	           <td style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+	           <td style="font-size:8px;text-align:left;">FECHA INICIO RELACION LABORAL</td> 
+	           <td style="font-size:8px;text-align:left;">TIPO REGIMEN</td> 
+	           <td style="font-size:8px;text-align:left;">PUESTO</td> 
+	           <td style="font-size:8px;text-align:left;">CLAVE DE ENTIDAD FEDERATIVA</td> 
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-	           <td style="font-size:10px;text-align:left;">ANTIGÜEDAD</td> 
-	           <td style="font-size:10px;text-align:left;">BANCO</td> 
-	           <td style="font-size:10px;text-align:left;">NIVEL TABULAR</td> 
-	           <td style="font-size:10px;text-align:left;">RIEGO DE PUESTO</td> 
+	           <td style="font-size:8px;text-align:left;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+	           <td style="font-size:8px;text-align:left;">ANTIGÜEDAD</td> 
+	           <td style="font-size:8px;text-align:left;">BANCO</td> 
+	           <td style="font-size:8px;text-align:left;">NIVEL TABULAR</td> 
+	           <td style="font-size:8px;text-align:left;">RIEGO DE PUESTO</td> 
 	        </tr>
 	        <tr>
-	           <td style="font-size:10px;text-align:left;border-top: white 1px solid;  border-top: white 1px solid;"></td> 
-	           <td style="font-size:10px;text-align:left;">TIPO DE CONTRATO</td> 
-	           <td style="font-size:10px;text-align:left;">CUENTA BANCARIA</td> 
-	           <td style="font-size:10px;text-align:left;">PERIODICIDAD PAGO</td> 
-	           <td style="font-size:10px;text-align:left;"></td> 
+	           <td style="font-size:8px;text-align:left;border-top: white 1px solid;  border-top: white 1px solid;"></td> 
+	           <td style="font-size:8px;text-align:left;">TIPO DE CONTRATO</td> 
+	           <td style="font-size:8px;text-align:left;">CUENTA BANCARIA</td> 
+	           <td style="font-size:8px;text-align:left;">PERIODICIDAD PAGO</td> 
+	           <td style="font-size:8px;text-align:left;"></td> 
 	        </tr>
         </table>
         <table>
             <tr>
-                <th height="1" width="50%" height="15" colspan="1" style="font-size:12px;text-align:center;border: black 1px solid;">PERCEPCION</th>
-                <th height="1" width="50%" height="15" colspan="1" style="font-size:12px;text-align:center;">DEDUCCIONES</th>
+                <th height="1" width="50%" height="3" colspan="1" style="font-size:10px;text-align:center;border: black 1px solid;">PERCEPCION</th>
+                <th height="1" width="50%" height="3" colspan="1" style="font-size:10px;text-align:center;">DEDUCCIONES</th>
             </tr>
             <tr>
-                <td height="100px" style="font-size:10px;text-align:left;"></td> 
-                <td height="100px" style="font-size:10px;text-align:left;"></td> 
+                <td height="50px" style="font-size:8px;text-align:left;"></td> 
+                <td height="50px" style="font-size:8px;text-align:left;"></td> 
 	        </tr>
 	        
         </table>
          <table>
             <tr>
-                <th height="1" width="50%" height="15" colspan="1" style="font-size:12px;text-align:center;border: black 1px solid;">OTROS PAGOS</th>
-                <th height="1" width="50%" height="15" colspan="1" style="font-size:12px;text-align:center;">SUBSIDIO AL EMPLEO</th>
+                <th height="1" width="50%" height="3" colspan="1" style="font-size:10px;text-align:center;border: black 1px solid;">OTROS PAGOS</th>
+                <th height="1" width="50%" height="3" colspan="1" style="font-size:10px;text-align:center;">SUBSIDIO AL EMPLEO</th>
             </tr>
             <tr>
-                <td height="1" style="font-size:10px;text-align:center;">OTRO PAGO</td> 
-                <td height="1" style="font-size:10px;text-align:left;">SUBSIDIO CAUSADO</td> 
+                <td height="1" style="font-size:8px;text-align:center;">OTRO PAGO</td> 
+                <td height="1" style="font-size:8px;text-align:left;">SUBSIDIO CAUSADO</td> 
 	        </tr>
 	         <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <th height="1" style="font-size:10px;text-align:center;">COMPENSACION SALDOS A FAVOR </th> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <th height="1" style="font-size:7px;text-align:center;">COMPENSACION SALDOS A FAVOR </th> 
 	        </tr>
 	        <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">SALDO A FAVOR</td> 
+                <td height="1" style="font-size:8px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:8px;text-align:left;">SALDO A FAVOR</td> 
 	        </tr>
 	        <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">AÑO</td> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">AÑO</td> 
 	        </tr>
 	        <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">REMANENTE SALDO A FAVOR </td> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">REMANENTE SALDO A FAVOR </td> 
 	        </tr>
 	        <tr>
-	            <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <th height="1" width="50%" height="15" colspan="1" style="font-size:10px;text-align:center;">INCAPACIDADES</th>
+	            <td height="1" style="font-size:8px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
+                <th height="1" width="50%" height="3" colspan="1" style="font-size:8px;text-align:center;">INCAPACIDADES</th>
 	        </tr>
 	        <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">INCAPACIDADES</td> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">INCAPACIDADES</td> 
 	        </tr>
 	        <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">DIAS DE INCAPACIDAD</td> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">DIAS DE INCAPACIDAD</td> 
 	        </tr>
 	         <tr>
-                <td height="1" style="font-size:10px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">TIPO DE INCAPACIDAD</td> 
+                <td height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">TIPO DE INCAPACIDAD</td> 
 	        </tr>
 	         <tr>
-                <td height="1" style="font-size:10px;text-align:center;"></td> 
-                <td height="1" style="font-size:10px;text-align:left;">EMPORTE MONETARIO </td> 
+                <td height="1" style="font-size:7px;text-align:center;"></td> 
+                <td height="1" style="font-size:7px;text-align:left;">EMPORTE MONETARIO </td> 
 	        </tr>
 	        
         </table>
