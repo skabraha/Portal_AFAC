@@ -49,8 +49,8 @@ table {
      <div style="padding-left:2%;padding-top:2%">
           <table>
           <tr>
-                <th height="" width="400px" ROWSPAN=11 style="font-size:14px;text-align:center;background-color:#FFFFFF">
-                  <img src="../dist/img/logoafac.png" width="270" height="113.4" alt="">
+                <th height="" width="200px" ROWSPAN=11 style="font-size:14px;text-align:center;background-color:#FFFFFF">
+                  <img src="{{public_path('images/logoafac.png')}}" width="270" height="113.4" alt="">
                 </th>
 	            <th width="400px" style="font-size:14px;text-align:center;">EMISOR</th> <th width="600px" COLSPAN=2  style="font-size:14px;text-align:center;">COMPROBANTE DE NOMINA</th>
 	       </tr>

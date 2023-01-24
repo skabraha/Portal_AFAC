@@ -323,7 +323,7 @@ $nav_links = [
     </div>
 </nav>
 <div class="bg-blue-900">
-    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-3 px-3 sm:px-4 lg:px-6">
         <div class="flex items-center justify-between flex-wrap">
             <div class="w-0 flex-1 flex items-center">
                 <span class="flex p-2 rounded-lg" style="background:#0813AF">
@@ -341,9 +341,28 @@ $nav_links = [
         </div>
     </div>
 </div>
-<div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
+{{-- <div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
     style="background-image: url({{ asset('images/img3.jpg') }})">
     <div class="md:w-1/2">
         <p class="text-3xl font-bold">Portal de Autoservicio de los Trabajadores de la AFAC.</p>
+    </div>
+</div> --}}
+<div class="relative py-6 lg:py-4">
+    <img class="z-0 w-full h-full absolute inset-0 object-cover" src="{{ asset('images/banner_portal.jpg') }}"
+        alt="bg" />
+    <div
+        class="z-10 relative container px-6 mx-auto flex flex-col md:flex-row items-start md:items-center justify-between">
+        <div>
+            <h4 tabindex="0" class="focus:outline-none text-2xl font-bold leading-tight text-white">Portal de Autoservicio de los Trabajadores de la AFAC.</h4>
+            <ul class="flex flex-col md:flex-row items-start md:items-center text-gray-300 text-sm mt-3">
+                <li class="flex items-center mt-4 md:mt-0">
+                    <div class="mr-1">
+                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/background_with_sub_text-svg3.svg"
+                            alt="date">
+                    </div>
+                    <span tabindex="0" class="focus:outline-none">Started on 29 Jan 2020</span>
+                </li>
+            </ul>
+        </div>
     </div>
 </div>
