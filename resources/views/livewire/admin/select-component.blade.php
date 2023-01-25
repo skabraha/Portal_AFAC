@@ -6,14 +6,14 @@
             <select wire:model="anio"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el año</option>
-                @foreach ($queryEmployes->groupBy('FechaInicialPago') as $queryEmploye)
-                {{$years = $date->year}}
-                    <option value="{{$queryEmploye[0]->FechaInicialPago}}">{{$years}}</option>
+
+                @foreach ($queryEmployes as $queryEmploye)
+                    <option value="{{ $queryEmploye->years }}">{{ $queryEmploye->years }}</option>
                 @endforeach
             </select>
             @error('anio')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
             @enderror
         </div>
         <div class="relative flex-grow w-full">
@@ -21,29 +21,36 @@
             <select wire:model="month"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el mes</option>
-                @foreach ($queryEmployes->groupBy('FechaInicialPago') as $queryEmploye)
-                {{$month = $date->format('F')}}
-                    <option value="{{$month}}">{{$month}}</option>
+                @foreach ($queryMonths as $queryMonth)
+                    @if (Str::substr($queryMonth->months, 0, 4) == $anio)
+                        <option value="{{ Str::substr($queryMonth->months, 5, 2) }}">
+                            {{ Str::upper(substr($queryMonth->months, 8)) }}</option>
+                    @endif
                 @endforeach
+
             </select>
             @error('month')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+                {{ $month }}
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
             @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona la quincena</label>
-            <select wire:model="quincena"
+            <select wire:model.defer="quincena"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione la quincena</option>
-                {{-- @foreach ($quincenas as $quincena)
-                <option value="{{ $quincena->quincena }}"> {{ $quincena->quincena }}</option>
-                @endforeach --}}
+                @foreach ($queryDays as $queryDay)
+                    @if (Str::substr($queryDay->days, 0, 2) == $month)
+                        <option value="{{ Str::substr($queryDay->days, 3, 2) }}">
+                            {{ Str::substr($queryDay->days, 3, 2) }}</option>
+                    @endif
+                @endforeach
             </select>
-            {{-- @error('quincena')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-            @enderror --}}
+            @error('quincena')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
     </div>
     <div class="py-4 flex justify-center">
