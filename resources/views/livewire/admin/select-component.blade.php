@@ -6,50 +6,57 @@
             <select wire:model="anio"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el año</option>
+
                 @foreach ($queryEmployes as $queryEmploye)
-                    <option value="{{$queryEmploye->FechaInicialPago}}">{{$queryEmploye->FechaInicialPago}}</option>
+                    <option value="{{ $queryEmploye->years }}">{{ $queryEmploye->years }}</option>
                 @endforeach
             </select>
-            {{-- @error('anio')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-            @enderror --}}
+            @error('anio')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona el mes</label>
-            <select wire:model.defer="month"
+            <select wire:model="month"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione el mes</option>
-                <option value="ENERO">ENERO</option>
-                <option value="FEBRERO">FEBRERO</option>
-                <option value="MARZO">MARZO</option>
-                <option value="ABRIL">ABRIL</option>
-                <option value="MAYO">MAYO</option>
+                @foreach ($queryMonths as $queryMonth)
+                    @if (Str::substr($queryMonth->months, 0, 4) == $anio)
+                        <option value="{{ Str::substr($queryMonth->months, 5, 2) }}">
+                            {{ Str::upper(substr($queryMonth->months, 8)) }}</option>
+                    @endif
+                @endforeach
+
             </select>
-            {{-- @error('mes')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-            @enderror --}}
+            @error('month')
+                {{ $month }}
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
         <div class="relative flex-grow w-full">
             <label for="email" class="leading-7 text-lg text-gray-600">Selecciona la quincena</label>
-            <select wire:model="quincena"
+            <select wire:model.defer="quincena"
                 class="form-control py-3 px-4 pr-9 block w-full border-gray-200 rounded-md text-base focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400">
                 <option value="">Seleccione la quincena</option>
-                {{-- @foreach ($quincenas as $quincena)
-                <option value="{{ $quincena->quincena }}"> {{ $quincena->quincena }}</option>
-                @endforeach --}}
+                @foreach ($queryDays as $queryDay)
+                    @if (Str::substr($queryDay->days, 0, 2) == $month)
+                        <option value="{{ Str::substr($queryDay->days, 3, 2) }}">
+                            {{ Str::substr($queryDay->days, 3, 2) }}</option>
+                    @endif
+                @endforeach
             </select>
-            {{-- @error('quincena')
-            <span
-                class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
-            @enderror --}}
+            @error('quincena')
+                <span
+                    class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $message }}</span>
+            @enderror
         </div>
     </div>
     <div class="py-4 flex justify-center">
         <button wire:click.prevent="clean"
             class="inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">Limpiar</button>
-        <button wire:click.prevent="search"
+        <button wire:click.prevent="searhComponent()"
             class="ml-4 inline-flex text-white bg-blue-500 border-0 py-2 px-6 focus:outline-none hover:bg-blue-600 rounded text-lg">Buscar</button>
     </div>
     <div>
@@ -81,23 +88,22 @@
                                         XML</th>
                                 </tr>
                             </thead>
-                            {{$resultQuerys}}
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                {{-- @foreach ($resultQuerys as $resultQuery) --}}
+                                @foreach ($resultQuerys->groupBy('FechaInicialPago') as $resultQuery)
                                     <tr>
                                         <td
                                             class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                            {{-- {{ $resultQuery->FechaInicialPago . ' - ' . $resultQuery->FechaFinalPago }} --}}
+                                            {{ $resultQuery[0]->FechaInicialPago . ' - ' . $resultQuery[0]->FechaFinalPago }}
                                         </td>
                                         <td
                                             class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                            {{-- {{ $resultQuery->TotalSueldos }} --}}
+                                            {{ $resultQuery[0]->TotalSueldos }}
                                         <td
                                             class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                            {{-- {{ $resultQuery->NoCertificado }} --}}
+                                            {{ $resultQuery[0]->NoCertificado }}
                                         <td
                                             class="uppercase px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                            {{-- {{ $resultQuery->Fecha }} --}}
+                                            {{ $resultQuery[0]->Fecha }}
                                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <a href="{{ route('imprimir') }}"
                                                 class="inline-flex flex-shrink-0 justify-center items-center gap-2 h-[2.875rem] w-[2.875rem] rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm  dark:focus:ring-offset-gray-800">
@@ -121,7 +127,7 @@
                                             </button>
                                         </td>
                                     </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
                                 {{-- {{ $usuarios->links() }} --}}
                             </tbody>
                         </table>
