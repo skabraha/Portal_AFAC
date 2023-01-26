@@ -71,9 +71,6 @@
                                 <tr>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
-                                        Nombre</th>
-                                    <th scope="col"
-                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
                                         Periodo de pago</th>
                                     <th scope="col"
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase dark:text-gray-400">
@@ -95,10 +92,6 @@
                             <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
                                 @foreach ($resultQuerys->groupBy('NumEmpleado') as $resultQuery)
                                     <tr>
-                                        <td
-                                            class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
-                                            {{ $resultQuery[0]->Nombre3 }}
-                                        </td>
                                         <td
                                             class="uppercase px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800 dark:text-gray-200">
                                             {{ $resultQuery[0]->FechaInicialPago . ' - ' . $resultQuery[0]->FechaFinalPago }}
