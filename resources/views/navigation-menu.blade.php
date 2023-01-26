@@ -341,13 +341,13 @@ $nav_links = [
         </div>
     </div>
 </div>
-{{-- <div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
+<div class="bg-cover bg-center  h-auto text-white py-14 px-10 object-fill"
     style="background-image: url({{ asset('images/img3.jpg') }})">
     <div class="md:w-1/2">
         <p class="text-3xl font-bold">Portal de Autoservicio de los Trabajadores de la AFAC.</p>
     </div>
-</div> --}}
-<div class="relative py-6 lg:py-4">
+</div>
+{{-- <div class="relative py-6 lg:py-4">
     <img class="z-0 w-full h-full absolute inset-0 object-cover" src="{{ asset('images/banner_portal.jpg') }}"
         alt="bg" />
     <div
@@ -365,4 +365,4 @@ $nav_links = [
             </ul>
         </div>
     </div>
-</div>
+</div> --}}
