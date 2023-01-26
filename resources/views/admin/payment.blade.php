@@ -21,7 +21,8 @@
                                         <p class="lg:w-2/3 mx-auto text-center leading-relaxed text-2xl">Criterios de
                                             búsqueda</p>
                                     </div>
-                                    @livewire('admin.select-component')
+                                    {{-- @livewire('admin.select-component') --}}
+                                    @livewire('user.select-component')                                    
                                 </div>
                             </div>
                         </div>

@@ -157,10 +157,10 @@ table {
 	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">TIPO NOMINA: {{$resultQuerys[0]->TipoNomina}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES: {{$resultQuerys[0]->TotalPercepciones}}</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA PAGO: {{$resultQuerys[0]->FechaPago}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES: {{$resultQuerys[0]->TotalPercepciones}}</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA PAGO: {{$date->format('d/m/Y')}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL DE PERCEPCIONES: {{$resultQuerys[0]->TotalPercepciones}}</td>
 	        </tr>
 	        <tr>
-	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA INICIAL PAGO: {{$date->format('d/m/Y')}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL OTROS PAGOS: {{$resultQuerys[0]->TotalOtrosPagos}}</td>
+	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid; border-bottom:white 1px solid">FECHA INICIAL PAGO: {{$resultQuerys[0]->FechaInicialPago}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid; border-bottom:white 1px solid">TOTAL OTROS PAGOS: {{$resultQuerys[0]->TotalOtrosPagos}}</td>
 	        </tr>
 	        <tr>
 	           <td style="font-size:8px;text-align:left;  border-top: white 1px solid;">FECHA FINAL PAGO: {{$resultQuerys[0]->FechaFinalPago}}</td> <td style="font-size:8px;text-align:left; border-top: white 1px solid;"></td>
