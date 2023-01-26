@@ -5,7 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Livewire\Users;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
-
+use App\Http\Livewire\Admin\SelectComponent;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:admin.home')->name('admin.home');
 Route::get('usuario', [UserController::class,'index'])->middleware('can:admin.user.home')->name('admin.user.home');
@@ -31,5 +31,6 @@ Route::controller(DataController::class)->group(function(){
     Route::post('datas-import', 'import')->name('datas.import');
 });
 
-Route::name('imprimir')->get('/imprimir',[DataController::class, 'imprimir']);
+Route::get('imprimir', [SelectComponent::class, 'imprimePdf'])->name('imprimir');
+// Route::name('imprimir')->get('/imprimir',[DataController::class, 'imprimir']);
 

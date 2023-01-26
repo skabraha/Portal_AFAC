@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Data;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
+
 
 class SelectComponent extends Component
 {
@@ -41,7 +43,23 @@ class SelectComponent extends Component
             ->where('id2', Auth::user()->username)
             ->get();
     }
+    public function imprime()
+    {
+        $idFilter = $this->anio . '/' . $this->month . '/' . $this->quincena;
+        return redirect()->route('imprimir',compact('idFilter'));
+    }
+    public function imprimePdf(){
 
+        $resultQuerys = Data::where('FechaInicialPago', $_GET['idFilter'])
+        ->where('id2', Auth::user()->username)
+        ->get();
+
+        $date = Carbon::parse($resultQuerys[0]->FechaInicialPago);
+        $date->format('d/m/Y');
+
+        $pdf = PDF::loadView('nomina_receipt',compact('resultQuerys','date'));
+        return $pdf->setPaper('A4','landscape')->download('Recibo de nomina.pdf');
+    }
     public function render()
     {
 
