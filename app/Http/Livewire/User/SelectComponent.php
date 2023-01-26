@@ -31,7 +31,7 @@ class SelectComponent extends Component
     }
     public function clean()
     {
-        $this->reset(['anio']);
+        $this->reset(['anio','month','quincena']);
     }
     public function searhComponent()
     {
@@ -81,4 +81,13 @@ class SelectComponent extends Component
         return view('livewire.user.select-component', compact('queryEmployes', 'queryMonths', 'queryDays'));
     }    
 
+    public function messages()
+    {
+
+        return [
+            'anio.required' => 'Campo obligatorio',
+            'month.required' => 'Campo obligatorio',
+            'quincena.required' => 'Campo obligatorio',
+        ];
+    }    
 }
