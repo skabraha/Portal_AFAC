@@ -3,6 +3,9 @@
 namespace App\Imports;
 
 use App\Models\Data;
+use App\Models\deduction;
+use App\Models\perceptions;
+use App\Models\otherpay;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
@@ -113,6 +116,31 @@ class DatasImport implements ToCollection, WithHeadingRow, WithBatchInserts, Wit
                 'DiasIncapacidad' => $row['DiasIncapacidad'],
                 'TipoIncapacidad' => $row['TipoIncapacidad'],
                 'ImporteMonetario' => $row['ImporteMonetario'],
+            ]);
+            $perceptionsTable = perceptions::create([
+                'NumEmpleado' => $row['NumEmpleado'],
+                'pay_day' => $row['FechaPago'],
+                'type' => $row['TipoPercepcion'],
+                'key' => $row['Clave'],
+                'concept' => $row['Concepto'],
+                'imp_gravado' => $row['ImporteGravado'],
+                'imp_exento' => $row['ImporteExento'],
+            ]);
+            $deductionTable = deduction::create([
+                'NumEmpleado' => $row['NumEmpleado'],
+                'pay_day' => $row['FechaPago'],
+                'type' => $row['TipoDeduccion'],
+                'key' => $row['Clave7'],
+                'concept' => $row['Concepto8'],
+                'importe' => $row['Importe9'],
+            ]);
+            $otherTable = otherpay::create([
+                'NumEmpleado' => $row['NumEmpleado'],
+                'pay_day' => $row['FechaPago'],
+                'type' => $row['TipoOtroPago'],
+                'key' => $row['Clave12'],
+                'concept' => $row['Concepto11'],
+                'importe' => $row['Importe10'],
             ]);
         }
     }
