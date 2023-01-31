@@ -234,7 +234,7 @@
                     </tr>
                     @foreach ($resultpersp as $resultpersps)
                     <tr>
-                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->type_p}}</td>
+                        <td style="font-size:9px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->requestype->codigo.' '.$resultpersps->requestype->name}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->key_p}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->concept_p}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->imp_gravado}}</td>
@@ -257,7 +257,7 @@
                     </tr>
                     @foreach ($resultdeduct as $resultdeducts)
                     <tr>
-                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->type_d}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->requestypeduc->codigo.' '.$resultdeducts->requestypeduc->name}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->key_d}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->concept_d}}</td>
                         <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->importe_d}}</td>

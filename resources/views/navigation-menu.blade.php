@@ -47,6 +47,10 @@ $nav_links = [
                     <x-jet-nav-link href="{{ route('admin.home') }}" :active="request()->routeIs('admin.home')">
                         {{ __('Admin') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('catalogo') }}" :active="request()->routeIs('catalogo')">
+                        {{ __('Catálogo') }}
+                    </x-jet-nav-link>
+
                     @else
                     <x-jet-nav-link href="{{ route('admin.user.home') }}"
                         :active="request()->routeIs('admin.user.home')">

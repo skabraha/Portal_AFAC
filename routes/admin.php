@@ -28,6 +28,9 @@ Route::get('/admin_import', function () {
 Route::get('/history', function () {
     return view('/admin/history');
 })->name('bitacora');
+Route::get('/catalogo', function () {
+    return view('/admin/catalogos/catalogo');
+})->name('catalogo');
 
 Route::controller(DataController::class)->group(function () {
     Route::get('datas', 'index');
