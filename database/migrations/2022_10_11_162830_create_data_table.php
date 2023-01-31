@@ -22,7 +22,7 @@ return new class extends Migration
             // $table->string('mes')->default(0);
             // $table->string('quincena')->default(0);
             // -----------------XML
-            $table->foreign('NumEmpleado')->references('username')->on('users')->onDelete('set null');
+            //$table->foreign('NumEmpleado')->references('username')->on('users')->onDelete('set null');
             $table->text('id_main')->nullable();
             $table->text('totalregs')->nullable();
             $table->string('Num')->nullable();
@@ -72,7 +72,7 @@ return new class extends Migration
             $table->text('Curp')->nullable();
             $table->text('Departamento')->nullable();
             $table->text('FechaInicioRelLaboral')->nullable();
-            //$table->text('NumEmpleado')->nullable();
+            $table->text('NumEmpleado')->nullable();
             $table->text('NumSeguridadSocial')->nullable();
             $table->text('PeriodicidadPago')->nullable();
             $table->text('Puesto')->nullable();

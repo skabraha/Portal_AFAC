@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('otherpays', function (Blueprint $table) {
             $table->id();
-            $table->foreign('NumEmpleado')->references('username')->on('users')->onDelete('set null');
-            $table->date('pay_day');
-            $table->string('type');
-            $table->string('key');
-            $table->string('concept');
-            $table->string('importe');  
+            $table->text('NumEmpleado')->nullable();
+            $table->date('pay_day_o')->nullable();
+            $table->text('type_o')->nullable();
+            $table->text('key_o')->nullable();
+            $table->text('concept_o')->nullable();
+            $table->text('importe_o')->nullable();  
             $table->timestamps();
         });
     }

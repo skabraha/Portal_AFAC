@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('perceptions', function (Blueprint $table) {
             $table->id();
-            $table->foreign('NumEmpleado')->references('username')->on('users')->onDelete('set null');
-            $table->date('pay_day');
-            $table->string('type');
-            $table->string('key');
-            $table->string('concept');
-            $table->string('imp_gravado');  
-            $table->string('imp_exento');
+            $table->text('NumEmpleado')->nullable();
+            $table->date('pay_day_p')->nullable();
+            $table->text('type_p')->nullable();
+            $table->text('key_p')->nullable();
+            $table->text('concept_p')->nullable();
+            $table->text('imp_gravado')->nullable();
+            $table->text('imp_exento')->nullable();
             $table->timestamps();
         });
     }

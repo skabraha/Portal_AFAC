@@ -35,7 +35,6 @@ class DatasImport implements ToCollection, WithHeadingRow, WithBatchInserts, Wit
         // 'quincena'    => $row['quincena'],
         // ---------------------XML
         foreach ($rows as $row) {
-
             $NominaUp = Data::create([
                 'id_main' => $row['id_main'],
                 'totalregs' => $row['totalregs'],
@@ -117,31 +116,38 @@ class DatasImport implements ToCollection, WithHeadingRow, WithBatchInserts, Wit
                 'TipoIncapacidad' => $row['TipoIncapacidad'],
                 'ImporteMonetario' => $row['ImporteMonetario'],
             ]);
-            $perceptionsTable = perceptions::create([
-                'NumEmpleado' => $row['NumEmpleado'],
-                'pay_day' => $row['FechaPago'],
-                'type' => $row['TipoPercepcion'],
-                'key' => $row['Clave'],
-                'concept' => $row['Concepto'],
-                'imp_gravado' => $row['ImporteGravado'],
-                'imp_exento' => $row['ImporteExento'],
-            ]);
-            $deductionTable = deduction::create([
-                'NumEmpleado' => $row['NumEmpleado'],
-                'pay_day' => $row['FechaPago'],
-                'type' => $row['TipoDeduccion'],
-                'key' => $row['Clave7'],
-                'concept' => $row['Concepto8'],
-                'importe' => $row['Importe9'],
-            ]);
-            $otherTable = otherpay::create([
-                'NumEmpleado' => $row['NumEmpleado'],
-                'pay_day' => $row['FechaPago'],
-                'type' => $row['TipoOtroPago'],
-                'key' => $row['Clave12'],
-                'concept' => $row['Concepto11'],
-                'importe' => $row['Importe10'],
-            ]);
+
+            if ($row['TipoPercepcion'] > 0){
+                $perceptionsTable = perceptions::create([
+                    'NumEmpleado' => $row['NumEmpleado'],
+                    'pay_day_p' => $row['FechaPago'],
+                    'type_p' => $row['TipoPercepcion'],
+                    'key_p' => $row['Clave'],
+                    'concept_p' => $row['Concepto'],
+                    'imp_gravado' => $row['ImporteGravado'],
+                    'imp_exento' => $row['ImporteExento'],
+                ]);
+            };
+            if ($row['TipoDeduccion'] > 0){
+                $deductionTable = deduction::create([
+                    'NumEmpleado' => $row['NumEmpleado'],
+                    'pay_day_d' => $row['FechaPago'],
+                    'type_d' => $row['TipoDeduccion'],
+                    'key_d' => $row['Clave7'],
+                    'concept_d' => $row['Concepto8'],
+                    'importe_d' => $row['Importe9'],
+               ]);
+            };
+            if ($row['TipoOtroPago'] > 0){
+                $otherTable = otherpay::create([
+                    'NumEmpleado' => $row['NumEmpleado'],
+                    'pay_day_o' => $row['FechaPago'],
+                    'type_o' => $row['TipoOtroPago'],
+                    'key_o' => $row['Clave12'],
+                    'concept_o' => $row['Concepto11'],
+                    'importe_o' => $row['Importe10'],
+                ]);
+            };
         }
     }
     // }
