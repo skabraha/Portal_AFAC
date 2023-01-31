@@ -241,7 +241,7 @@
         </table>
         <table>
             <tr>
-                <th width="50%"  colspan="5" style="font-size:10px;text-align:center;border: black 1px solid;">OTROS PAGOS: {{$resultQuerys[0]->TotalOtrosPagos}}</th>
+                <th width="50%"  colspan="7" style="font-size:10px;text-align:center;border: black 1px solid;">OTROS PAGOS: {{$resultQuerys[0]->TotalOtrosPagos}}</th>
                 <th width="50%"  colspan="5" style="font-size:10px;text-align:center;">SUBSIDIO AL EMPLEO</th>
             </tr>
             <tr>

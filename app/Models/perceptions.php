@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-use App\Models\perceptions;
 use App\Models\deduction;
 use App\Models\otherpay;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
