@@ -25,7 +25,7 @@
         font-family: 'Montserrat';
         border-collapse: collapse;
         border-color: gray;
-        width: 100%;
+        
         border: black .5px solid;
     }
     
@@ -60,11 +60,21 @@
         padding-left: 87%;
         padding-top: -5%;
     }
+    .Cuadrado {
+        width: 100px;
+        height: auto;
+        border: black 0.3px solid;
+    }  
+    .Cuadrado2 {
+        width: 100px;
+        height: 144px;
+        border: black 0.3px solid;
+    }  
     
 </style>
 <body>
     <div style="padding-left:0.5%;padding-top:2%">
-        <table style="font-size=10px">
+        <table style="font-size=10px;width: 100%;">
             <tr>
                 <th height="" width="200px" ROWSPAN="9" style="font-size:14px;text-align:center;background-color:#FFFFFF">
                     <img src="{{public_path('images/logoafac.png')}}" width="189" height="70" alt="">
@@ -113,7 +123,7 @@
                 <td COLSPAN="4" style="font-size:8px;text-align:left;">UUID</td>
             </tr>
         </table>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <th colspan="6" style="font-size:10px;text-align:center;">RECEPTOR</th>
             </tr>
@@ -131,7 +141,7 @@
                 <th colspan="6" style="font-size:10px;text-align:center;">CONCEPTOS</th>
             </tr>
         </table>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <th ROWSPAN="2" style="vertical-align: middle;font-size:10px;text-align:center;background-color:#FFFFFF">CLAVE DE PRODUCTO O SERVICIO: {{$resultQuerys[0]->ClaveProdServ}}</th>
                 <td style="font-size:8px;text-align:center;">CANTIDAD: {{$resultQuerys[0]->Cantidad}}</td>
@@ -148,7 +158,7 @@
                 <td style="font-size:8px;text-align:center;">0</td>
             </tr>
         </table>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <th colspan="5" style="font-size:10px;text-align:center;">COMPLEMENTO NOMINA</th>
             </tr>
@@ -167,7 +177,7 @@
                 <td style="font-size:8px;text-align:left; border-top: white 1px solid;border-bottom:white 1px solid"></td>
             </tr>
         </table>
-        <table>
+        <table style="width: 100%;">
             <tr>
                 <th height="1" width="22.82%" colspan="1" style="font-size:10px;text-align:center;border: black 1px solid;">EMISOR</th>
                 <th height="1" width="77.2%" colspan="4" style="font-size:10px;text-align:center;">RECEPTOR</th>
@@ -208,86 +218,125 @@
                 <td style="font-size:8px;text-align:left;"></td>
             </tr>
         </table>
-        <table>
-            <tr>
-                <th height="1" width="50%" height="3" colspan="5" style="font-size:10px;text-align:center;border: black 1px solid;">PERCEPCION</th>
-                <th height="1" width="50%" height="3" colspan="4" style="font-size:10px;text-align:center;">DEDUCCIONES</th>
-            </tr>
-            <tr>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">Percepción</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">clave</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">Concepto</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">imp.gravado</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">imp.Exento</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">Tipo Deducción</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">clave</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">Concepto</td>
-                <td style="font-size:10px;text-align:center;border: black 1px solid;">Importe</td>
-            </tr>
-            @foreach ($resultpersp as $resultpersps)
-            <tr>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->type_p}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->key_p}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->concept_p}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->imp_gravado}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->imp_exento}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->requestdeduction->type_d}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->requestdeduction->key_d}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->requestdeduction->concept_d}}</td>
-                <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->requestdeduction->importe_d}}</td>
-            </tr>
-            @endforeach
-           
-        </table>
-        <table>
-            <tr>
-                <th width="50%"  colspan="7" style="font-size:10px;text-align:center;border: black 1px solid;">OTROS PAGOS: {{$resultQuerys[0]->TotalOtrosPagos}}</th>
-                <th width="50%"  colspan="5" style="font-size:10px;text-align:center;">SUBSIDIO AL EMPLEO</th>
-            </tr>
-            <tr>
-                <td height="1" colspan="7" style="font-size:8px;text-align:center;">OTRO PAGO</td>
-                <td height="1" colspan="5" style="font-size:8px;text-align:left;">SUBSIDIO CAUSADO</td>
-            </tr>
-            <tr>
-                <td height="1" colspan="2" style="font-size:7px;text-align:center;border-bottom:white 1px solid">CLAVE</td>
-                <td height="1" colspan="3" style="font-size:7px;text-align:center;border-bottom:white 1px solid">CONCEPTO</td>
-                <td height="1" colspan="2" style="font-size:7px;text-align:center;border-bottom:white 1px solid">IMPORTE</td>
-                <th height="1" colspan="5" style="font-size:8px;text-align:center;">COMPENSACION SALDOS A FAVOR </th>
-            </tr>
-            <tr>
-                <td height="1" colspan="7" style="font-size:8px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:8px;text-align:left;">SALDO A FAVOR</td>
-            </tr>
-            <tr>
-                <td height="1" colspan="7" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">AÑO</td>
-            </tr>
-            <tr>
-                <td height="1" colspan="7" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">REMANENTE SALDO A FAVOR </td>
-            </tr>
-            <tr>
-                <td height="1" colspan="7" style="font-size:8px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <th colspan="3" colspan="5"width="50%" height="3" style="font-size:8px;text-align:center;">INCAPACIDADES</th>
-            </tr>
-            <tr>
-                <td colspan="7" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">INCAPACIDADES</td>
-            </tr>
-            <tr>
-                <td colspan="7" height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">DIAS DE INCAPACIDAD: {{$resultQuerys[0]->DiasIncapacidad}}</td>
-            </tr>
-            <tr>
-                <td colspan="7" height="1" style="font-size:7px;text-align:center;border-top: white 1px solid; border-bottom:white 1px solid"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">TIPO DE INCAPACIDAD: {{$resultQuerys[0]->TipoIncapacidad}}</td>
-            </tr>
-            <tr>
-                <td colspan="7" height="1" style="font-size:7px;text-align:center;"></td>
-                <td height="1" colspan="5" style="font-size:7px;text-align:left;">IMPORTE MONETARIO: {{$resultQuerys[0]->ImporteMonetario}} </td>
-            </tr>
+         <div style="margin: auto;">
+            {{-- PERCEPCIONES --}}
+            <div style="float: left; width: 50%;">
+                <table width="100%">
+                    <tr>
+                        <th  colspan="5" style="font-size:10px;text-align:center;border: black 1px solid;border-right:white 1px solid">PERCEPCION</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">Percepción</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">clave</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">Concepto</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">imp.gravado</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;border-right:white 1px solid">imp.Exento</td>
+                    </tr>
+                    @foreach ($resultpersp as $resultpersps)
+                    <tr>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->type_p}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->key_p}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->concept_p}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultpersps->imp_gravado}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid;border-right:white 1px solid">{{$resultpersps->imp_exento}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            {{-- DEDUCIÓN --}}
+            <div style="float: left; width: 50%;">
+                <table width="100%">
+                    <tr>
+                        <th  colspan="4" style="font-size:10px;text-align:center;border: black 1px solid;">DEDUCCIONES</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">Deducción</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">clave</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">Concepto</td>
+                        <td style="font-size:10px;text-align:center;border: black 1px solid;">Importe</td>
+                    </tr>
+                    @foreach ($resultdeduct as $resultdeducts)
+                    <tr>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->type_d}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->key_d}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->concept_d}}</td>
+                        <td style="font-size:10px;text-align:center;border-bottom:white 1px solid">{{$resultdeducts->importe_d}}</td>
+                    </tr>
+                    @endforeach
+                </table>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div style="margin: auto;">
+            {{-- OTROS PAGOS --}}
+            <div style="float: left; width: 50%;" class="Cuadrado2">
+                <table width="100%">
+                    <tr>
+                        <th colspan="3" style="font-size:10px;text-align:center;border: black 1px solid;border-right:white 1px solid">OTROS PAGOS</th>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:8px;text-align:center;border: black 1px solid;border-right:white 1px solid">OTRO PAGO</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="font-size:8px;text-align:center;border: black 1px solid;border-right:white 1px solid">TIPO OTRO PAGO</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:center;border: black 0.5px solid;border-bottom:white 1px solid;border-right:white 1px solid:">CLAVE</td>
+                        <td style="font-size:8px;text-align:center;border: black 0.5ppx solid;border-bottom:white 1px solid;border-right:white 1px solid">CONCEPTO</td>
+                        <td style="font-size:8px;text-align:center;border: black 0.5ppx solid;border-bottom:white 1px solid;border-right:white 1px solid">IMPORTE</td>
+                    </tr>
+                    @foreach ($resultother as $resultothers)
+                    <tr>
+                        <td style="font-size:8px;text-align:center;border: black 1px solid;border-bottom:white 1px solid;border-right:white 1px solid">{{$resultothers[0]->key_o}}</td>
+                        <td style="font-size:8px;text-align:center;border: black 1px solid;border-bottom:white 1px solid;border-right:white 1px solid">{{$resultothers[0]->concept_o}}</td>
+                        <td style="font-size:8px;text-align:center;border: black 1px solid;border-bottom:white 1px solid;border-right:white 1px solid">{{$resultothers[0]->importe_o}}</td>
+                    </tr>
+                    @endforeach
+                        {{-- <tr>
+                            <td style="font-size:8px;text-align:left;">CERTIFICADO:{{$resultQuerys[0]->Certificado}}</td>
+                        </tr> --}}
 
-        </table>
+                </table>
+            </div>
+            {{-- SUPSIDIO --}}
+            <div style="float: left; width: 50%;" class="">
+                <table width="100%">
+                    <tr>
+                        <th style="font-size:10px;text-align:center;border: black 1px solid;">SUBSIDIO AL EMPLEO</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">SUBSIDIO CAUSADO</td>
+                    </tr>
+                    <tr>
+                        <th style="font-size:10px;text-align:center;border: black 1px solid">COMPENSACION SALDOS A FAVOR</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">SALDO A FAVOR</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">AÑO</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">REMANENTE SALDO A FAVOR </td>
+                    </tr>
+                    <tr>
+                        <th style="font-size:10px;text-align:center;border: black 1px solid;border-right">INCAPACIDADES</th>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">INCAPACIDADES</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">DIAS DE INCAPACIDAD</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">TIPO DE INCAPACIDAD</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:8px;text-align:left;">EMPORTE MONETARIO</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </body>
 </html>

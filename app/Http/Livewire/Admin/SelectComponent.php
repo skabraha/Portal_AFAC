@@ -59,11 +59,14 @@ class SelectComponent extends Component
         $date = Carbon::parse($resultQuerys[0]->FechaPago);
         $date->format('d/m/Y');
         //percepcion y deducción
-        $resultpersp = perceptions::with(['requestdeduction'])
-        ->where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->get();
+        $resultpersp = perceptions::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_p', $resultQuerys[0]->FechaPago)->get();
+        //percepcion y deducción
+        $resultdeduct = deduction::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_d', $resultQuerys[0]->FechaPago)->get();
         //otros pagos
-        $resultother = otherpay::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->get();
-        $pdf = PDF::loadView('nomina_receipt',compact('resultQuerys','date','resultpersp','resultother'));
+        $resultother2 = otherpay::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_o', $resultQuerys[0]->FechaPago)->get();
+        $resultother =$resultother2->groupBy('concept_o');
+        //PDF
+        $pdf = PDF::loadView('nomina_receipt',compact('resultQuerys','date','resultpersp','resultother','resultdeduct'));
         return $pdf->setPaper('A4','landscape')->download('Recibo de nomina.pdf');
     }
     public function render()
