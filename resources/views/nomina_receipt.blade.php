@@ -220,7 +220,7 @@
         </table>
          <div style="margin: auto;">
             {{-- PERCEPCIONES --}}
-            <div style="float: left; width: 50%;">
+            <div style="float: left; width: 50%;" class="Cuadrado">
                 <table width="100%">
                     <tr>
                         <th  colspan="5" style="font-size:10px;text-align:center;border: black 1px solid;border-right:white 1px solid">PERCEPCION</th>
