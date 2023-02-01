@@ -22,6 +22,7 @@ return new class extends Migration
             // $table->string('mes')->default(0);
             // $table->string('quincena')->default(0);
             // -----------------XML
+            //$table->foreign('NumEmpleado')->references('username')->on('users')->onDelete('set null');
             $table->text('id_main')->nullable();
             $table->text('totalregs')->nullable();
             $table->string('Num')->nullable();

@@ -4,6 +4,9 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Data;
 use App\Models\User;
+use App\Models\perceptions;
+use App\Models\deduction;
+use App\Models\otherpay;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -55,8 +58,15 @@ class SelectComponent extends Component
 
         $date = Carbon::parse($resultQuerys[0]->FechaPago);
         $date->format('d/m/Y');
-
-        $pdf = PDF::loadView('nomina_receipt',compact('resultQuerys','date'));
+        //percepcion y deducción
+        $resultpersp = perceptions::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_p', $resultQuerys[0]->FechaPago)->get();
+        //percepcion y deducción
+        $resultdeduct = deduction::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_d', $resultQuerys[0]->FechaPago)->get();
+        //otros pagos
+        $resultother2 = otherpay::where('NumEmpleado', $resultQuerys[0]->NumEmpleado)->where('pay_day_o', $resultQuerys[0]->FechaPago)->get();
+        $resultother =$resultother2->groupBy('concept_o');
+        //PDF
+        $pdf = PDF::loadView('nomina_receipt',compact('resultQuerys','date','resultpersp','resultother','resultdeduct'));
         return $pdf->setPaper('A4','landscape')->download('Recibo de nomina.pdf');
     }
     public function render()
