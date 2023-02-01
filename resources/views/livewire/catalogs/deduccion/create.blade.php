@@ -1,8 +1,8 @@
 <div>
     <x-notifications position="top-center" />
-    {{-- @if ($modal)
-        @include('livewire.catalogs.course.modal-new')
-    @endif --}}
+    @if ($modal)
+        @include('livewire.catalogs.deduccion.modal-new')
+    @endif
     <div class="p-4">
         <x-button wire:click="addCourse" right-icon="plus" blue label="Añadir Deducción" />
         <label for="table-search" class="sr-only">Search</label>
@@ -53,14 +53,14 @@
                             {{ $deductions->name  }}
                         </td>
                         <td class="px-4 py-4">
-                            <x-button wire:click.prevent="" xs rounded blue label="Editar " />
+                            <x-button wire:click.prevent="edit({{ $deductions->id }})" xs rounded blue label="Editar " />
                             <div wire:loading wire:target="edit">
                             </div>
                         </td>
                         <td class="px-4 py-4">
                             <x-button wire:click.prevent="" xs rounded white
                                 label="Eliminar " />
-                            <div wire:loading wire:target="deleteCourse">
+                            <div wire:loading wire:target="">
                             </div>
                         </td>
                     </tr>

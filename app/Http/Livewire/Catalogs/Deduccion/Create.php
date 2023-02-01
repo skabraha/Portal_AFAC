@@ -13,7 +13,16 @@ class Create extends Component
     use WithPagination;
     public $search = "";
     public $page = 1;
-    public $deduction;
+    public $modal=false;
+    public $deduction,$name,$key,$id_typersep;
+
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+            'key' => 'required',
+        ];
+    }
     public function render()
     {
         $deduction = type_deduction::where('name', 'LIKE', '%' . $this->search . '%')
@@ -21,5 +30,61 @@ class Create extends Component
         ->paginate(10, ['*'], 'deductionPage');
         $this->deduction = collect($deduction->items());
         return view('livewire.catalogs.deduccion.create',['paginate' => $deduction]);
+    }
+
+    public function openModal()
+    {
+        $this->modal = true;
+    }
+    public function closeModal()
+    {
+        $this->modal = false;
+    }
+    public function edit($id)
+    {
+        $editperception = type_deduction::findOrFail($id);
+        $this->id_typersep = $id;
+        $this->key = $editperception->codigo;
+        $this->name = $editperception->name;
+        $this->openModal();
+    }
+   
+    public function clean()
+    {
+        $this->reset([
+            'name', 'key'
+        ]);
+    }
+
+    public function addpercepcion()
+    {
+        $this->openModal();
+        $this->clean();
+    }
+    public function save()
+    {
+        $this->validate();
+        $savepersepcion = type_deduction::updateOrCreate(
+            ['id' => $this->id_typersep],
+            [
+                'name' => $this->name,
+                'codigo' => $this->key   
+            ]
+        );
+        $this->clean();
+        $this->closeModal();
+        $this->notification([
+            'title'       => 'Deducción guardada',
+            'description'       => 'Tus cambios se han guardado éxitosamente',
+            'icon'        => 'success',
+            'timeout' => 3300
+        ]);
+    }
+    public function messages()
+    {
+        return [
+            'name.required' => 'Campo obligatorio',
+            'key.required' => 'Campo obligatorio',
+        ];
     }
 }
