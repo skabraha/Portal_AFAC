@@ -20,7 +20,7 @@
                 </h3>
             </div>
             <div class="flex flex-col items-center xl:items-start xl:mx-2">
-                <h1 class="text-xl font-medium text-gray-800 capitalize lg:text-2xl dark:text-white">Percepción
+                <h1 class="text-xl font-medium text-gray-800 capitalize lg:text-2xl dark:text-white">Deducción
                 </h1>
                 <div class="mt-0">
                     <span class="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>

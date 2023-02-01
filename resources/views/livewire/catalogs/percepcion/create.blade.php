@@ -4,7 +4,7 @@
         @include('livewire.catalogs.percepcion.modal-new')
     @endif
     <div class="p-4">
-        <x-button wire:click="addCourse" right-icon="plus" blue label="Añadir Percepción" />
+        <x-button wire:click="addpercepcion" right-icon="plus" blue label="Añadir Percepción" />
         <label for="table-search" class="sr-only">Search</label>
         <div class="my-6 relative mt-1 float-right">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -53,14 +53,14 @@
                             {{ $perceptions->name  }}
                         </td>
                         <td class="px-4 py-4">
-                            <x-button wire:click.prevent="" xs rounded blue label="Editar " />
+                            <x-button wire:click.prevent="edit({{ $perceptions->id }})" xs rounded blue label="Editar " />
                             <div wire:loading wire:target="edit">
                             </div>
                         </td>
                         <td class="px-4 py-4">
                             <x-button wire:click.prevent="" xs rounded white
                                 label="Eliminar " />
-                            <div wire:loading wire:target="deleteCourse">
+                            <div wire:loading wire:target="">
                             </div>
                         </td>
                     </tr>
