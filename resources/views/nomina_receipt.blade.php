@@ -61,7 +61,7 @@
         padding-top: -5%;
     }
     .Cuadrado {
-        width: 100px;
+        width: 500px;
         height: auto;
         border: black 0.3px solid;
     }  
