@@ -14,7 +14,7 @@ class Create extends Component
     public $search = "";
     public $page = 1;
     public $modal=false;
-    public $deduction,$name,$key,$id_typersep;
+    public $deduction,$name,$key,$id_typededuc;
 
     public function rules()
     {
@@ -43,7 +43,7 @@ class Create extends Component
     public function edit($id)
     {
         $editperception = type_deduction::findOrFail($id);
-        $this->id_typersep = $id;
+        $this->id_typededuc = $id;
         $this->key = $editperception->codigo;
         $this->name = $editperception->name;
         $this->openModal();
@@ -52,11 +52,11 @@ class Create extends Component
     public function clean()
     {
         $this->reset([
-            'name', 'key'
+            'name', 'key','id_typededuc'
         ]);
     }
 
-    public function addpercepcion()
+    public function adddeduccion()
     {
         $this->openModal();
         $this->clean();
@@ -65,10 +65,11 @@ class Create extends Component
     {
         $this->validate();
         $savepersepcion = type_deduction::updateOrCreate(
-            ['id' => $this->id_typersep],
+            ['id' => $this->id_typededuc],
             [
                 'name' => $this->name,
-                'codigo' => $this->key   
+                'codigo' => $this->key,
+                'estado' => '0',    
             ]
         );
         $this->clean();

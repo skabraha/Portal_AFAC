@@ -58,7 +58,7 @@
                             </div>
                         </td>
                         <td class="px-4 py-4">
-                            <x-button wire:click.prevent="" xs rounded white
+                            <x-button wire:click.prevent="delete({{ $perceptions->id }})" xs rounded white
                                 label="Eliminar " />
                             <div wire:loading wire:target="">
                             </div>

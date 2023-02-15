@@ -52,11 +52,11 @@ class Create extends Component
     public function clean()
     {
         $this->reset([
-            'name', 'key'
+            'name', 'key','id_other'
         ]);
     }
 
-    public function addpercepcion()
+    public function addother()
     {
         $this->openModal();
         $this->clean();
@@ -68,7 +68,8 @@ class Create extends Component
             ['id' => $this->id_other],
             [
                 'name' => $this->name,
-                'codigo' => $this->key   
+                'codigo' => $this->key,
+                'estado' => '0',    
             ]
         );
         $this->clean();

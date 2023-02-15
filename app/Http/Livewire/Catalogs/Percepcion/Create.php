@@ -52,7 +52,7 @@ class Create extends Component
     public function clean()
     {
         $this->reset([
-            'name', 'key'
+            'name', 'key','id_typersep'
         ]);
     }
 
@@ -68,7 +68,8 @@ class Create extends Component
             ['id' => $this->id_typersep],
             [
                 'name' => $this->name,
-                'codigo' => $this->key   
+                'codigo' => $this->key,
+                'estado' => '0', 
             ]
         );
         $this->clean();
@@ -80,11 +81,55 @@ class Create extends Component
             'timeout' => 3300
         ]);
     }
+
+    public function delete($id)
+    {
+        $deleteLicense = type_perception::findOrFail($id);
+        $this->id_typersep = $id;
+        //$this->key = $deleteLicense->state;
+        $this->confirmDelete();
+    }
+
+    public function confirmDelete()
+    {
+        $this->dialog()->confirm([
+            'title'       => '¡Atención!',
+            'description' => '¿Estas seguro de eliminar esta percepción?',
+            'icon'        => 'error',
+            'accept'      => [
+                'label'  => 'Si, eliminar',
+                'method' => 'saveDelete',
+            ],
+            'reject' => [
+                'label'  => 'No, cancelar',
+                'method' => '',
+            ],
+        ]);
+    }
+    public function saveDelete()
+    {
+        $delete = type_perception::find($this->id);
+        $delete->update(
+            [
+                'estado' => '1' 
+            ]
+        );
+        $this->notification([
+            'title'       => 'Se ha eliminado éxitosamente',
+            'icon'        => 'error',
+            'timeout' => 3300
+        ]);
+        $this->updatedsearch();
+    }
     public function messages()
     {
         return [
             'name.required' => 'Campo obligatorio',
             'key.required' => 'Campo obligatorio',
         ];
+    }
+    public function updatedsearch()
+    {
+        $this->resetPage('catalogo');
     }
 }

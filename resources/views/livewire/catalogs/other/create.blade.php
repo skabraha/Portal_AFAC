@@ -4,7 +4,7 @@
         @include('livewire.catalogs.other.modal-new')
     @endif
     <div class="p-4">
-        <x-button wire:click="addCourse" right-icon="plus" blue label="Añadir Otros Pagos" />
+        <x-button wire:click="addother" right-icon="plus" blue label="Añadir Otros Pagos" />
         <label for="table-search" class="sr-only">Search</label>
         <div class="my-6 relative mt-1 float-right">
             <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
