@@ -4,6 +4,47 @@
             {{ __('Administrador') }}
     </h2>
     </x-slot>--}}
+    <div class="py-2">
+        <div class="container px-6 p-y-1 mx-auto">
+            <section class="text-gray-600 body-font">
+                <div class="container px-6 py-1 mx-auto">
+                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 md:grid-cols-2 xl:grid-cols-3">
+                        <a href="">
+                            <div
+                                class="group bg-white h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden transition duration-100 transform hover:scale-105 hover:cursor-pointer">
+                                <div class="overflow-hidden bg-cover cursor-pointer lg:h-48 md:h-36 w-full object-cover object-center group"
+                                    style="background-image:url('https://img.freepik.com/foto-gratis/primer-plano-manos-contador-contando-calculadora_1262-3170.jpg?size=626&ext=jpg&ga=GA1.1.49596645.1689708146&semt=sph')">
+                                    <div
+                                        class="flex flex-col justify-center w-full h-full px-8 py-4 transition-opacity duration-700 opacity-0 backdrop-blur-sm bg-gray-800 group-hover:opacity-70">
+                                        <h2 class="mt-4 text-2xl font-semibold text-white capitalize">RECIBOS DE NOMINA
+                                        </h2>
+                                        <p class="mt-2 text-lg tracking-wider text-blue-300 uppercase ">BUSQUEDA Y DESCARGA</p>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h1 class="title-font text-lg font-medium text-gray-900 mb-3">
+                                        RECIBOS DE NOMINA
+                                    </h1>
+                                    <div class="flex items-center flex-wrap ">
+                                        <p
+                                            class="group-hover:animate-pulse text-sky-700 inline-flex items-center md:mb-2 lg:mb-0">
+                                            BUSQUEDA DE RECIBOS
+                                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor"
+                                                stroke-width="2" fill="none" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <path d="M5 12h14"></path>
+                                                <path d="M12 5l7 7-7 7"></path>
+                                            </svg>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
     <div class="py-12">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
